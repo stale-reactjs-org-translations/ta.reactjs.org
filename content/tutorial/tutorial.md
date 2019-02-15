@@ -14,15 +14,16 @@ redirect_from:
 
 This tutorial doesn't assume any existing React knowledge.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## பயிற்சியை ஆரம்பிப்பதற்கு முன்னர்  {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React apps, and mastering it will give you a deep understanding of React.
+இந்த பயிற்சியில் சிறிய விளையாட்டு ஒன்றை உருவாக்குவோம்.
+ **நீங்கள் விளையாட்டுகளை உருவாக்குவதில் ஆர்வமில்லாதவராயின் இதை தவிர்க்கலாம்.  -- ஆனால் இதுக்கு ஒரு வாய்ப்பு கொடுங்கள்.** இதில் அடிப்படை React மாதிரி ஒன்றை உருவாக்க தேவையான அனைத்து நுட்பங்களையும் கற்கலாம், இது உங்களுக்கு React பற்றிய ஆழமான புரிதலை வழங்கும்.
 
 >Tip
 >
 >This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
 
-The tutorial is divided into several sections:
+ இந்த பயிற்சி சில பாகங்களாக பிரிக்கப்பட்டுள்ளது:
 
 * [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
 * [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
