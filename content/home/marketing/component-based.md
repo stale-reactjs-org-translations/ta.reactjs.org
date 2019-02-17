@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: கூறுகளை அடிப்படையாக கொண்டது.
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+நாம் முதலில் சொந்த state ஐ நிர்வகிக்க கூடிய சிறிய கூறுகளை (components) உருவாக்கி அவற்றை ஒன்றினைத்து மிகவும் சிக்கலான பயனர் இடைமுத்தினை இலகுவான முறையில் உருவாக்கலாம்.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+கூறுகளினுடைய தர்க்கங்கள் JavaScript ஆல் எழுதப்பட்டிருக்கின்றன, நீங்கள் உங்கள் மென்பொருளின் மூலம் தரவுகளை எளிதில் அனுப்ப முடியும் அத்துடன் state ஐ யும் DOM ஐ யும் தனி தனியாக நிர்வகிக்கலாம்
