@@ -1,8 +1,8 @@
 ---
-title: Declarative
+title: அறிமுகம்
 order: 0
 ---
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+உங்களுடைய மென்பொருளுக்கான பயனர் இடைமுகத்தினை மிக சிறப்பாகவும் இலகுவாகவும் உருவாக்க React உதவுகின்றது, அத்துடன் உங்களுடைய தரவு மாற்றங்களுடன் தொடர்புடைய கூறுகளை ஐ மட்டும் திறமையான முறையில் உருவாக்கும் அல்லது மாற்றம் செய்யும்.
 
-Declarative views make your code more predictable and easier to debug.
+உங்களுடைய நிரல் குறியீடுகளினால் உருவாகும் பயனர் இடைமுக காட்சிகளை முன்கூட்டியே அறிய கூடியதாகவும் இலகுவாக வழுக்களை சரி செய்ய கூடியதாகவும் இருக்கின்றது.

@@ -51,7 +51,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; A JavaScript library for building user interfaces"
+          title="React &ndash; இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript நிரல்கூறு"
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
@@ -134,7 +134,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript
+                    நிரல்கூறு
                   </p>
                   <Flex
                     valign="center"
@@ -149,12 +150,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        ஆரம்பிக்க
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        பயிற்சி செய்ய
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -286,12 +287,12 @@ class Home extends Component {
               <Flex valign="center">
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    ஆரம்பிக்க
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    பயிற்சி செய்ய
                   </ButtonLink>
                 </CtaItem>
               </Flex>
