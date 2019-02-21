@@ -51,7 +51,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript library"
+          title="React &ndash; இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript நிரல்கூறு"
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
@@ -135,7 +135,7 @@ class Home extends Component {
                       },
                     }}>
                     இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript
-                    library
+                    நிரல்கூறு
                   </p>
                   <Flex
                     valign="center"
