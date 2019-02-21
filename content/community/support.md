@@ -1,6 +1,6 @@
 ---
 id: support
-title: Where To Get Support
+title: எங்கிருந்து ஆதரவைப்பெற்றுக்கொள்வது!
 layout: community
 sectionid: community
 permalink: community/support.html
@@ -8,26 +8,26 @@ redirect_from:
   - "support.html"
 ---
 
-React has a community of millions of developers.
+React ஆனது பல மில்லியன் வல்லுநர்களை உள்ளடக்கிய ஒரு குழுவை கொண்டுள்ளது.
 
-On this page we've listed some React-related communities that you can be a part of; see the other pages in this section for additional online and in-person learning materials.
+இக்கே நாம் React சம்பத்தப்பட்ட சில குழுக்களையும் அவை தொடர்பான சில குறிப்புகளையும் குறிப்பிட்டுளோம், இவை தொடர்பான மேலதிக தகவல்களுக்கும் தனிநபர் கற்கைகளுக்கும் இப்பகுதியிலுள்ள மற்றய பக்கங்களைப்  பார்க்கவும்.
 
 ## Stack Overflow {#stack-overflow}
 
-Stack Overflow is a popular forum to ask code-level questions or if you're stuck with a specific error. Read through the [existing questions](https://stackoverflow.com/questions/tagged/reactjs) tagged with **reactjs** or [ask your own](https://stackoverflow.com/questions/ask?tags=reactjs)!
+Stack Overflow ஆனது பொதுவாக அதிகளவானொரால் குறிமுறையாக்கல் ( code-level ) சார்ந்த வினாக்ளுக்கு விடைதேடவும் அவை தொடர்பாக எழும் பிரச்சனைகளை தீர்பதற்க்கும் பயன்படுத்தப்படும் ஓர் இணையதளம் ஆகும். இதை நீங்கள் பயன்படுத்தும் போது  **reactjs** ஏன்ற குறியீட்டை பயன்படுத்தவும். இங்கே **reactjs** என குறிப்பிடப்பட்ட [தற்போதுள்ள வினாக்களை அறிந்துகொள்ள](https://stackoverflow.com/questions/tagged/reactjs) அல்லது [புதிதாக ஒரு வினாவினை பதிவிடுவதற்க்கு](https://stackoverflow.com/questions/ask?tags=reactjs)!
 
-## Popular Discussion Forums {#popular-discussion-forums}
+## பிரபலமான கலந்துரையாடல் பகுதிகள் {#popular-discussion-forums}
 
-There are many online forums which are a great place for discussion about best practices and application architecture as well as the future of React. If you have an answerable code-level question, Stack Overflow is usually a better fit.
+தற்போது React தொடர்பான சிறந்த நடைமுறைகள், கட்டமைப்பு மற்றும் எதிர்காலம் போன்றவை தொடர்பான விவாதங்களுக்கும் கலைந்துரையாடலுக்கும் பல கலந்துரையாடல் பகுதிகள் காணப்படுகின்றன. உங்களுக்கு குறிமுறையாக்கல் (code-level) தொடர்பாக ஏதெனனும் கேள்விகள் இருப்பின் Stack Overflow அதற்க்கு சிறந்த ஒரு இடமாக இருக்கும்.
 
-Each community consists of many thousands of React users.
+ஒவ்வொரு குழுக்களும் பல்லாயிரக்கக்கணக்கான வல்லுநர்களை கொண்டுள்ளது.
 
-* [DEV's React community](https://dev.to/t/react)
-* [Hashnode's React community](https://hashnode.com/n/reactjs)
-* [Reactiflux online chat](https://discord.gg/0ZcbPKXt5bZjGY5n)
-* [Reddit's React community](https://www.reddit.com/r/reactjs/)
-* [Spectrum's React community](https://spectrum.chat/react)
+* [DEV இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://dev.to/t/react)
+* [Hashnode இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://hashnode.com/n/reactjs)
+* [Reactiflux இல் இணைய கலந்துரையாடல் பகுதி](https://discord.gg/0ZcbPKXt5bZjGY5n)
+* [Reddit இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://www.reddit.com/r/reactjs/)
+* [Spectrum இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://spectrum.chat/react)
 
-## News {#news}
+## செய்திகள் {#news}
 
-For the latest news about React, [follow **@reactjs** on Twitter](https://twitter.com/reactjs) and the [official React blog](/blog/) on this website.
+React தொடர்பான சமீபத்திய செய்தி உடனுக்குடன் அறிந்து கொள்ள, [Twitter இல் **@reactjs** பின்தொடரவும்](https://twitter.com/reactjs) மற்றும் [React இன் அதிகாரபூர்வமான வலைப்பதிவையும்](/blog/) பார்வையிடவும்.
