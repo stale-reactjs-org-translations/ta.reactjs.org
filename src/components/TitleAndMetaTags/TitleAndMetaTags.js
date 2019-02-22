@@ -8,7 +8,7 @@
 import Helmet from 'react-helmet';
 import React from 'react';
 
-const defaultDescription = 'A JavaScript library for building user interfaces';
+const defaultDescription = 'இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript நிரல்கூறு.';
 
 type Props = {
   title: string,

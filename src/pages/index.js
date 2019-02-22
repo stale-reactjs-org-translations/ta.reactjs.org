@@ -17,7 +17,6 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
-import ReactDOM from 'react-dom';
 import logoWhiteSvg from 'icons/logo-white.svg';
 
 class Home extends Component {
@@ -51,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript நிரல்கூறு"
+          title="React &ndash; இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript நிரல்கூறு ஆகும்."
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
@@ -131,11 +130,11 @@ class Home extends Component {
 
                       [media.greaterThan('xlarge')]: {
                         paddingTop: 20,
-                        fontSize: 30,
+                        fontSize: 26,
                       },
                     }}>
                     இது ஒரு பயனர் இடைமுகத்தை உருவாக்குவதற்கான JavaScript
-                    நிரல்கூறு
+                    நிரல்கூறு ஆகும்.
                   </p>
                   <Flex
                     valign="center"
@@ -235,7 +234,7 @@ class Home extends Component {
                               fontSize: 20,
 
                               [media.greaterThan('xlarge')]: {
-                                fontSize: 24,
+                                fontSize: 20,
                               },
                             },
                           },
