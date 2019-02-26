@@ -1,7 +1,7 @@
 ---
-title: A Stateful Component
+title: ஒரு பிரத்தியேக நிலையமைப்பைக் ( state ) கொண்ட கூறு ( Component )
 order: 1
 domid: timer-example
 ---
 
-In addition to taking input data (accessed via `this.props`), a component can maintain internal state data (accessed via `this.state`). When a component's state data changes, the rendered markup will be updated by re-invoking `render()`.
+இக் கூறுகளுக்கு வழங்கப்படும் உள்ளீடுகளுக்கு மேலதிகமாக ( `this.props` என்பதினூடாக பயன்படுத்த கூடியதாக அமைகின்ன்ற தரவுகள் ), ஒவ்வொரு கூறுகளும் தமக்கே உரிய பிரத்தியேக நிலையமைப்பு ( `this.state` என்பதினூடாக பயன்படுத்த கூடியதாக அமைகின்ன்ற ) தரவுகளை கொண்டுள்ளன. அக் குறிப்பிட்ட நிலையமைப்புக்கான தரவுகள் மாற்றம் அடையும் போதும் `render()` முறையையினை ( method ) மீண்டும் செயற்ப்பட்டு ஏற்கனவே காண்பிக்கப்பட்ட கூறுகளின் பெறுபேற்றை மாற்றியமைக்கும்.

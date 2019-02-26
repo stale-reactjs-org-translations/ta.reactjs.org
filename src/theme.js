@@ -313,7 +313,7 @@ const sharedStyles = {
       },
 
       [media.greaterThan('xlarge')]: {
-        fontSize: 25,
+        fontSize: 20,
         lineHeight: 1.3,
       },
     },

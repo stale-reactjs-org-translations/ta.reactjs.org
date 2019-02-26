@@ -99,7 +99,7 @@ class CodeEditor extends Component {
                 color: colors.white,
               }}>
               <MetaTitle onDark={true}>
-                Live JSX Editor
+                நேரடி JSX பதிப்பான்
                 <label
                   css={{
                     fontSize: 14,
@@ -200,7 +200,7 @@ class CodeEditor extends Component {
                   padding: '0 10px',
                   backgroundColor: colors.divider,
                 }}>
-                <MetaTitle>Result</MetaTitle>
+                <MetaTitle>பெறுபேறு</MetaTitle>
               </div>
               <div
                 id={containerNodeID}
