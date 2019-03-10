@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: ஆரம்பித்தல்
 permalink: docs/getting-started.html
 next: add-react-to-a-website.html
 redirect_from:
@@ -18,19 +18,19 @@ redirect_from:
   - "docs/environments.html"
 ---
 
-This page is an overview of the React documentation and related resources.
+இந்த பக்கமானது React ஆவணங்கள் மற்றும் தொடர்புடைய வளங்கள் பற்றிய ஓர் கண்ணோட்டமாகும்.
 
-**React** is a JavaScript library for building user interfaces. Learn what React is all about on [our homepage](/) or [in the tutorial](/tutorial/tutorial.html).
+**React** ஒர் பயனர் இடைமுகத்தினை உருவாக்குவதற்கான JavaScript நிரல்கூறு ஆகும். எமது [முகப்பு பக்கம்](/) அல்லது [பயிற்சிகள் பக்கத்தின்](/tutorial/tutorial.html) மூலம் React ஐ பற்றி முழுமையாக கற்கலாம்.
 
 ---
 
-- [Try React](#try-react)
-- [Learn React](#learn-react)
-- [Staying Informed](#staying-informed)
-- [Versioned Documentation](#versioned-documentation)
-- [Something Missing?](#something-missing)
+- [செய்து பார்த்தல்](#try-react)
+- [கற்றுணர்தல்](#learn-react)
+- [அறிவித்தல்கள்](#staying-informed)
+- [பதிப்பு ஆவணமாக்கம்](#versioned-documentation)
+- [ஏதேனும் தவறவிடப்பட்டுள்ளதா?](#something-missing)
 
-## Try React {#try-react}
+## செய்து பார்த்தல் {#try-react}
 
 React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need.** Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.
 
