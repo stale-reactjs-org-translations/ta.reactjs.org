@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Components and Props
+title: கூறுகள் மற்றும் பண்புகள்
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -16,7 +16,7 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+கூறுகள் உங்களை பயனர் இடைமுகத்தை சுயாதீன, மீண்டும் பயன்படுத்தக்கூடிய துண்டுகளாக பிரிக்கவும் மற்றும் ஒவ்வொரு துண்டு பற்றியும் தனித்தனியாக யோசிக்க அனுமதிக்கின்றது. இந்த பக்கம் கூறுகளை பற்றிய முன்னுரை அளிக்கிறது. கூறுகளின்  விரிவான API குறிப்பை நீங்கள் [இங்கே காணலாம்](/docs/react-component.html).
 
 Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
 
