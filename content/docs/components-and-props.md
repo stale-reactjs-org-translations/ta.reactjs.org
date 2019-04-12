@@ -18,33 +18,33 @@ next: state-and-lifecycle.html
 
 கூறுகள் உங்களை பயனர் இடைமுகத்தை சுயாதீன, மீண்டும் பயன்படுத்தக்கூடிய துண்டுகளாக பிரிக்கவும் மற்றும் ஒவ்வொரு துண்டு பற்றியும் தனித்தனியாக யோசிக்க அனுமதிக்கின்றது. இந்த பக்கம் கூறுகளை பற்றிய முன்னுரை அளிக்கிறது. கூறுகளின்  விரிவான API குறிப்பை நீங்கள் [இங்கே காணலாம்](/docs/react-component.html).
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+கருத்து ரீதியாக கூறுகளானது JavaScript செயல்பாடுகளை போன்றவை. அவை தன்னிச்சையான உள்ளீடுகளை(“props” ஏன்று அழைக்கப்படும்) ஏற்று, React உறுப்புகளை திரும்ப கொடுக்கின்றது. இந்த  React உறுப்புகளானது திரையில் என்ன தோன்ற வேண்டும் என்பதை விவரிக்கும்.
 
 ## Function and Class Components {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+ஒரு கூறுவை வரையறுக்க எளிய வழி ஒரு JavaScript செயல்பாட்டை எழுத வேண்டும்:
 
 ```js
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>வணக்கம், {props.name}</h1>;
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+இந்த செயல்பாடு ஒரு சரியான React கூறு, ஏனெனில் இது தகவலுடைய ஒர் பொருளை உள்ளிட்டாக பெற்று React உறுப்பை வெளியிடுகிறது. இவ்வகை கூறுகளை நாம் செயல்பாட்டு கூறுகள் என்று அழைக்கின்றோம் ஏனெனில் இவை இலக்கியரீதியாக JavaScript செயல்பாடுகளே.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+நீங்கள் [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) பயன்படுத்தியும் ஒரு கூறை வரையறுக்களாம்.
 
 ```js
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>வணக்கம், {this.props.name}</h1>;
   }
 }
 ```
 
-The above two components are equivalent from React's point of view.
+மேற்கூறிய இரு கூறுகளும்  Reactயின் பார்வையில் சமமானவையே.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+வகுப்புகள்[Classes] சில கூடுதல் அம்சங்களைக் கொண்டிருக்கின்றன, அவை [அடுத்த பிரிவுகளில்](/docs/state-and-lifecycle.html) விவாதிக்கப்படும். அதுவரை, நாம் சுருக்கமான தகவல்களை கொண்ட செயல்பாட்டு கூறுகளை பயன்படுத்துவோம்.
 
 ## Rendering a Component {#rendering-a-component}
 
