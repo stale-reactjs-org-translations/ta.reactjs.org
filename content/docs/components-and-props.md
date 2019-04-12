@@ -20,7 +20,7 @@ next: state-and-lifecycle.html
 
 கருத்து ரீதியாக கூறுகளானது JavaScript செயல்பாடுகளை போன்றவை. அவை தன்னிச்சையான உள்ளீடுகளை(“props” ஏன்று அழைக்கப்படும்) ஏற்று, React உறுப்புகளை திரும்ப கொடுக்கின்றது. இந்த  React உறுப்புகளானது திரையில் என்ன தோன்ற வேண்டும் என்பதை விவரிக்கும்.
 
-## Function and Class Components {#function-and-class-components}
+## செயல்பாட்டு மற்றும் வகுப்பு கூறுகள் {#function-and-class-components}
 
 ஒரு கூறுவை வரையறுக்க எளிய வழி ஒரு JavaScript செயல்பாட்டை எழுத வேண்டும்:
 
