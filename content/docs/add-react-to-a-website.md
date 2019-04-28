@@ -1,6 +1,6 @@
 ---
 id: add-react-to-a-website
-title: Add React to a Website
+title: React ஐ ஒரு இணையத்தளத்தில் சேர்க்கவும்
 permalink: docs/add-react-to-a-website.html
 redirect_from:
   - "docs/add-react-to-an-existing-app.html"
@@ -8,11 +8,11 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
-Use as little or as much React as you need.
+உங்களுக்கு தேவையானது போல சிறிய அல்லது அதிகமான React பயன்படுத்தவும்.
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need**. Perhaps you only want to add some "sprinkles of interactivity" to an existing page. React components are a great way to do that.
+React பிரவீண் படிப்படியாக தத்தெடுக்க தொடக்கத்தில் இருந்து வடிவமைக்கப்பட்டுள்ளது, and **உங்களுக்கு தேவையான அளவு சிறிய அல்லது அதிகமான React ஐ பயன்படுத்தலாம்**. ஒருவேளை நீங்கள் சில "ஊடாடிகளின் தெளிப்பு" மட்டுமே ஏற்கனவே உள்ள பக்கத்திற்கு சேர்க்க வேண்டும். React கூறுகள் அதை செய்ய சிறந்த வழி.
 
-The majority of websites aren't, and don't need to be, single-page apps. With **a few lines of code and no build tooling**, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+பெரும்பாலான வலைத்தளங்கள் ஒற்றை பக்க வலைத்தளங்கள் அல்ல. **சில குறியீட்டுத் கோடுகள் மற்றும் எந்த உருவாக்க கருவியாக்கல்** உடன், உங்கள் வலைத்தளத்தில் ஒரு சிறிய பகுதியில் React  ஐ வைத்து முயற்சி செயுங்கள்.. நீங்கள் படிப்படியாக அதன் இருப்பை விரிவாக்கலாம், அல்லது சில எதிர்வினை விட்ஜெட்டுகளை வைத்திருக்கலாம்.
 
 ---
 
