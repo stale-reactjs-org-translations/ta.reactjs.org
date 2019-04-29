@@ -46,30 +46,30 @@ class Welcome extends React.Component {
 
 வகுப்புகள்[Classes] சில கூடுதல் அம்சங்களைக் கொண்டிருக்கின்றன, அவை [அடுத்த பிரிவுகளில்](/docs/state-and-lifecycle.html) விவாதிக்கப்படும். அதுவரை, நாம் சுருக்கமான தகவல்களை கொண்ட செயல்பாட்டு கூறுகளை பயன்படுத்துவோம்.
 
-## Rendering a Component {#rendering-a-component}
+## கூறு வரைதல் {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+முன்னதாக, DOM குறிச்சொற்களை பிரதிநிதித்துவப்படுத்தும் செயல்பாட்டு கூறுகளை மட்டுமே நாம் சந்தித்தோம்:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+இருப்பினும், உறுப்புகளை பயனர் வரையறுக்கப்பட்ட கூறுகளை கொண்டும் பிரதிநிதித்துவப்படுத்தலாம்:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React இந்த வகை பயனர் வரையறுக்கப்பட்ட கூறு குறிக்கும் உறுப்பை பார்க்கும் பொழுது, அந்த கூறுக்கு JSX பண்புகளை ஒற்றை பொருளாக கொடுக்கின்றது. நாம் இவற்றை "props" என்று அழைக்கின்றோம்.
 
-For example, this code renders "Hello, Sara" on the page:
+உதாரணமாக, இந்த குறியீடு "வணக்கம், சாரா" என்று பக்கத்தில் வரையும்:
 
 ```js{1,5}
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>வணக்கம், {props.name}</h1>;
 }
 
-const element = <Welcome name="Sara" />;
+const element = <Welcome name="சாரா" />;
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -78,18 +78,18 @@ ReactDOM.render(
 
 [](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+இந்த எடுத்துக்காட்டில் என்ன நடக்கிறது என்பதை மீண்டும் பார்க்கலாம்:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. நாம் `ReactDOM.render ()`ஐ `<Welcome name="Sara" />` உறுப்பு பயன்படுத்தி அழைக்கிறோம்.
+2. React `Welcome` கூறை `{name: 'Sara'}` பண்புகளை கொண்டு அழைக்கும்.
+3. நம்முடைய `Welcome` கூறானது தற்போது `<h1>Hello, Sara</h1>` உறுப்பை முடிவாக திருப்பி கொடுக்கின்றது.
+4. React DOM திறமையாக DOMஐ மேம்படுத்தி `<h1>Hello, Sara</h1>`ஐ பொருத்துக்கின்றது.
 
->**Note:** Always start component names with a capital letter.
+>**Note:** எப்பொழுதும் கூறு பெயர்களைத் capital எழுத்துக்கள் கொண்டு தொடங்குங்கள்.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>React lowercase எழுத்துக்கள் கொண்டு தொடங்கும் கூறுகளை DOM குறிச்சொற்கள் என்று கருதுகிறது. உதாரணமாக `<div />` ஆனது HTML div குறிச்சொலை குறிக்கின்றது, ஆனால் `<Welcome />` கூறை குறிக்கின்றது.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>இந்த வழக்கத்திற்கு பின்னால் உள்ள காரணங்களைப் பற்றி மேலும் அறிய, தயவு செய்து [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) படிக்கவும்.
 
 ## Composing Components {#composing-components}
 
