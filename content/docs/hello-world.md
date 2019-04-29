@@ -6,7 +6,7 @@ prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+ஒரு சிறிய React நிரல் எடுத்துக்காட்டு பின்வருமாறு இருக்கும்:
 
 ```js
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+இது "Hello, world!" என்ற தலைப்பை காட்சிப்படுத்துகிறது
 
 [](codepen://hello-world)
 
