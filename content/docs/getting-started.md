@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: முன் தொடக்கம்
 permalink: docs/getting-started.html
 next: add-react-to-a-website.html
 redirect_from:
@@ -18,27 +18,27 @@ redirect_from:
   - "docs/environments.html"
 ---
 
-This page is an overview of the React documentation and related resources.
+இந்த பக்கமானது React தொடர்புடைய ஆவணங்கள் மற்றும் தொடர்புடைய ஆதாரங்களின் கண்ணோட்டம் ஆகும். 
 
-**React** is a JavaScript library for building user interfaces. Learn what React is all about on [our homepage](/) or [in the tutorial](/tutorial/tutorial.html).
+**React** ஒரு பயனர் இடை முகப்பை உருவாக்குவதற்கான JavaScript நிரல் நூலகம் ஆகும். React என்பது என்னவென்று அறிந்து கொள்ள [எமது முகப்பு](/) அல்லது [பயிற்சிக்கு](/tutorial/tutorial.html) செல்க.
 
 ---
 
-- [Try React](#try-react)
-- [Learn React](#learn-react)
-- [Staying Informed](#staying-informed)
-- [Versioned Documentation](#versioned-documentation)
-- [Something Missing?](#something-missing)
+- [React முயற்சி செய்ய](#try-react)
+- [React கற்க](#learn-react)
+- [அறிவிப்புக்காக காத்திரு](#staying-informed)
+- [ஆவண பதிப்பு](#versioned-documentation)
+- [தவறிய ஏதாவது?](#something-missing)
 
-## Try React {#try-react}
+## React முயற்சி செய்ய {#try-react}
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need.** Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.
+React ஆனது ஆரம்பம் முதலே படிப்படியாக ஏற்றுக்கொள்ளுமாறு வடிவமைக்கப்பட்டது, மேலும் **நீங்கள் கொஞ்சமாகவோ அல்லது உங்கள் தேவைக்கு ஏற்பவவோ React ஐ பயன்படுத்திக்கொள்ளலாம்.** நீங்கள் React இன் சுவையை பெற, HTML பக்கத்தில் சில பரிமாற்றத்தை சேர்க்கவோ, அல்லது ஒரு சிக்கலான React ஆல் இயங்கும் பயன்பாட்டை தொடங்க, இந்த பகுதியில் உள்ள இணைப்புகள் உதவும்.
 
-### Online Playgrounds {#online-playgrounds}
+### நிகழ்நிலை ஆடுகளங்கள் {#online-playgrounds}
 
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Glitch](https://glitch.com/edit/#!/remix/starter-react-template).
+நீங்கள் React உடன் விளையாட விருப்பப்பட்டால், பின்வரும் சில நிகழ்நிலை ஆடுகளங்களை பயன்படுத்தலாம். Hello World வார்ப்புருவை முயற்சி செய்ய [CodePen](https://ta.reactjs.org/redirect-to-codepen/hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Glitch](https://glitch.com/edit/#!/remix/starter-react-template).
 
-If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+உங்கள் சொந்த உரை திருத்தியை விரும்பினால், நீங்கள் இந்த [HTML கோப்புவை](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) செய்து, திருத்தும் செய்து, மற்றும் உங்கள் உலாவியில் உள்ளூர் கோப்பு அமைப்பிலிருந்து திறக்கவும். இது மெதுவாக இயங்கும் தன்மை  மாற்றத்தை செய்கிறது, எனவே இதை எளிய செய்முறைகளுக்கு மட்டுமே பயன்படுத்துவதை நாங்கள் பரிந்துரைக்கிறோம்.
 
 ### Add React to a Website {#add-react-to-a-website}
 
