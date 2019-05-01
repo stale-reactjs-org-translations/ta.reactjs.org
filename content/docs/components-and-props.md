@@ -91,23 +91,23 @@ ReactDOM.render(
 >
 >இந்த வழக்கத்திற்கு பின்னால் உள்ள காரணங்களைப் பற்றி மேலும் அறிய, தயவு செய்து [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) படிக்கவும்.
 
-## Composing Components {#composing-components}
+## கூறுகளை சேர்த்தல் {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+கூறுகள் அவற்றின் வெளியீட்டில் மற்ற கூறுகளை குறிப்பிடலாம். இதன் மூலம் ஒரே கூறின் பொருளை எந்த அளவிற்கும் நம்மால் பயன்படுத்த முடியும். ஓரு button, form, dialog, screen: இவை அனைத்தும் React appகளில் பொதுவாக கூறுகளாக வெளிப்படுத்தப்படுகின்றன.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+உதாரணமாக நம்மால் ஒரு `App` கூறை உருவாக்கி அதனை கொண்டு `Welcome` கூறை பலமுறை வரைய செய்ய முடியும்.:
 
 ```js{8-10}
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>வணக்கம், {props.name}</h1>;
 }
 
 function App() {
   return (
     <div>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
+      <Welcome name="சாரா" />
+      <Welcome name="சாகால்" />
+      <Welcome name="எடிட்டி" />
     </div>
   );
 }
@@ -120,7 +120,7 @@ ReactDOM.render(
 
 [](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+பொதுவாக, புது React app ஆனது ஒரு `App` கூறை உச்சத்தில் கொண்டிருக்கும். ஒரு வேலை நீங்கள் இருக்கும் appயில் Reactஐ ஒருங்கிணைத்தால், நீங்கள் சிறிய கூறாகிய `Button` மூலம் தொடங்கி படிபடியாக மேல் நோக்கி செல்லலாம்.
 
 ## Extracting Components {#extracting-components}
 
