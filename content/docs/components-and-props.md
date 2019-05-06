@@ -57,7 +57,7 @@ const element = <div />;
 இருப்பினும், உறுப்புகளை பயனர் வரையறுக்கப்பட்ட கூறுகளை கொண்டும் பிரதிநிதித்துவப்படுத்தலாம்:
 
 ```js
-const element = <Welcome name="Sara" />;
+const element = <Welcome name="சாரா" />;
 ```
 
 React இந்த வகை பயனர் வரையறுக்கப்பட்ட கூறு குறிக்கும் உறுப்பை பார்க்கும் பொழுது, அந்த கூறுக்கு JSX பண்புகளை ஒற்றை பொருளாக கொடுக்கின்றது. நாம் இவற்றை "props" என்று அழைக்கின்றோம்.
@@ -122,11 +122,11 @@ ReactDOM.render(
 
 பொதுவாக, புது React app ஆனது ஒரு `App` கூறை உச்சத்தில் கொண்டிருக்கும். ஒரு வேலை நீங்கள் இருக்கும் appயில் Reactஐ ஒருங்கிணைத்தால், நீங்கள் சிறிய கூறாகிய `Button` மூலம் தொடங்கி படிபடியாக மேல் நோக்கி செல்லலாம்.
 
-## Extracting Components {#extracting-components}
+## கூறுகளை பிரித்தல் {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+சிறிய பாகங்களாக கூறுகளை பிரிப்பதில் பயப்பட வேண்டாம்.
 
-For example, consider this `Comment` component:
+உதாரணத்திற்கு இந்த `Comment` கூறை கருத்தில்  கொள்ளுங்கள்.
 
 ```js
 function Comment(props) {
@@ -154,11 +154,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+இது `author` (ஒரு object), `text` (ஒரு string), and `date` (ஒரு date) ஆகியவற்றை பண்புகளாக எற்றுக்கொண்டு, ஒரு சமூக ஊடக வலைத்தளத்தின் கருத்துரை விவரிக்கிறது.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+இத்தகைய கூடுகளையுடைய இந்த கூறை மாற்றுவது தந்திரமானதாக இருக்கக்கூடும், மேலும் இதை தனிப்பட்ட பாகங்களாக மறுபடியும் மறுபடியும் பயன்படுத்துவது கடினம். இதிலிருந்து சில கூறுகளை பிரிக்கலாம்.
 
-First, we will extract `Avatar`:
+முதலில் நாம் `Avatar`யை பிரிக்கலாம்:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +171,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+`Avatar` கூறுக்கு தான் `Comment` கூறுக்கு உள் வரையபடுகிறது என்பது தெரிய வேண்டிய அவசியம் இல்லை. இதனால் தான் நாம் இதன் பண்பிற்க்கு `user` அன்றி பொதுவான் பெயரான `author` என்று கொடுத்துள்ளோம்.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+நாங்கள் கூறின் பண்பிற்க்கு பெயரிடும் பொழுது கூறு பயன்படும் இடத்தை கொண்டு பெயரிடுவதற்கு மாறாக கூறின் கண்ணோட்டத்தில் பெயரிடுவதை சிபாரிசு செய்கின்றோம்.
 
-We can now simplify `Comment` a tiny bit:
+இப்போது நாம் `Comment`யை சிறிது எளிமைபடுத்தலாம்:
 
 ```js{5}
 function Comment(props) {
@@ -198,7 +198,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+அடுத்து நாம் `Avatar` கூறை பயனர் பெயர்க்கு அடுத்து வரையும் கூறான `UserInfo`யை பிரிக்கலாம்.
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+இது நம்மை `Comment`யை இன்னும் எளிமைபடுத்த உதவுகிறது:
 
 ```js{4}
 function Comment(props) {
@@ -233,11 +233,12 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+கூறுகளை பிரித்தல் முதலில் கடிணமான வேலை போல தோன்றலாம், ஆனால் மறுபயன்பாட்டுக்கு உகந்த கூறுகளின் ஒரு தட்டு கொண்டிருப்பது பெரிய appsகளில் மிகவும் பயனுள்ளதாக இருக்கின்றது. இதில் நாம் பின்பற்ற வேண்டிய கொள்கையானது, ஒரு பயனர் இடைமுகம் பலமுறை பயன்பட்டாலோ அல்லது மிகவும் சிக்கலாதாக இருந்தாலோ அதனை மறுபயன்பாட்டு கூறாக மாற்றுவது சிறந்தது.
 
-## Props are Read-Only {#props-are-read-only}
+## Props ஆனது படிக்க மட்டுமே (Read-Only) {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+நீங்கள் ஒரு கூறை [செயல்பாடு அல்லது வகுப்பு](#function-and-class-components) கொண்டு உருவாக்கினாலும் அவை அதன் 
+பண்பயை எப்போதும் மாற்ற கூடாது. இந்த `sum` செயல்பாடை கருத்தில் கொள்ளுங்கள்.
 
 ```js
 function sum(a, b) {
@@ -245,9 +246,9 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+இவ்வகை செயல்பாடு ["pure"](https://en.wikipedia.org/wiki/Pure_function) என்று கூறபடுகிறது என்னென்றால் இவை அதன் உள்ளீட்டில் மாற்றம் செய்வது இல்லை மற்றும் எப்போதும் அதே உள்ளீட்டிற்கு அதே முடிவை வெளியிடுகிறது.
 
-In contrast, this function is impure because it changes its own input:
+மாறாக இந்த செயல்பாடானது impure என்னென்றால் இவை அதன் உள்ளீட்டில் மாற்றம் செய்கிறது:
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +256,9 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React ஆனது மிகவும் நெகிழ்வானது, ஆனால் இந்த ஒரு கடுமையான விதி மட்டும் உள்ளது:
 
-**All React components must act like pure functions with respect to their props.**
+**அனைத்து கூறுகளும் அதன் பண்புகளை பொருத்து pure செயல்பாடு போன்று செயல்பட வேண்டும்.**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+நிச்சயமாக, applicationனின் பயனர் இடைமுகங்கள் காலப்போக்கில் மாறும் தன்மை கொண்டது. [அடுத்த பகுதியில்](/docs/state-and-lifecycle.html), நாம் "state" என்ற ஒரு புதிய கருத்தை அறிமுக படுத்துவோம். State ஆனது React கூறின் வெளிப்பாட்டை, பயனர் செயல்கள், பிணைய பதில்கள் மற்றும் வேறு செயல்களின் விளைவாக விதி மீறல் இன்றீ மாற்ற வழிவகுக்கின்றது.
+
