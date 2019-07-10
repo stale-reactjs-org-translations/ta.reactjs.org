@@ -16,8 +16,12 @@ This tutorial doesn't assume any existing React knowledge.
 
 ## பயிற்சியை ஆரம்பிப்பதற்கு முன்னர்  {#before-we-start-the-tutorial}
 
+<<<<<<< HEAD
 இந்த பயிற்சியில் சிறிய விளையாட்டு ஒன்றை உருவாக்குவோம்.
  **நீங்கள் விளையாட்டுகளை உருவாக்குவதில் ஆர்வமில்லாதவராயின் இதை தவிர்க்கலாம்.  -- ஆனால் இதுக்கு ஒரு வாய்ப்பு கொடுங்கள்.** இதில் அடிப்படை React மாதிரி ஒன்றை உருவாக்க தேவையான அனைத்து நுட்பங்களையும் கற்கலாம், இது உங்களுக்கு React பற்றிய ஆழமான புரிதலை வழங்கும்.
+=======
+We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+>>>>>>> e1abbdecfd1a5a804bd38852e88373f54ddde014
 
 >குறிப்பு
 >
