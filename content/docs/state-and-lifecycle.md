@@ -10,7 +10,7 @@ next: handling-events.html
 
 இந்தப் பக்கம் React கூறுகளில் உள்ள நிலை(state) மற்றும் வாழ்க்கை வட்டம்(lifecycle) குறித்து முன்னுரை அளிக்கிறது. கூறுகளின்  விரிவான API குறிப்பை நீங்கள் [இங்கே காணலாம்](/docs/react-component.html).
 
-[முந்தைய பிரிவு ஒன்றில்](/docs/rendering-elements.html#updating-the-rendered-element) குறிப்பிடப்பட்டுள்ள சுழலும் கடிகார எடுத்துக்காட்டை எடுத்துக்கொள்க. [வரையும் உறுப்புகளில்](/docs/rendering-elements.html#rendering-an-element-into-the-dom), UIல் மாற்றம் செய்யும் ஒரே வழியை அறிந்தோம். வரையப்பட்ட வெளியீட்டை மாற்ற நாம் `ReactDOM.render()`யை அழைக்கிறோம்:
+[முந்தைய பிரிவு ஒன்றில்](/docs/rendering-elements.html#updating-the-rendered-element) குறிப்பிடப்பட்டுள்ள சுழலும் கடிகார எடுத்துக்காட்டை எடுத்துக்கொள்க. [வரையும் உறுப்புகளில்](/docs/rendering-elements.html#rendering-an-element-into-the-dom), UI-ல் மாற்றம் செய்யும் ஒரே வழியை அறிந்தோம். வரையப்பட்ட வெளியீட்டை மாற்ற நாம் `ReactDOM.render()`யை அழைக்கிறோம்:
 
 ```js{8-11}
 function tick() {
@@ -29,11 +29,12 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
+`Clock` கூறை முழுமையாக மறுபயனாக்குதல் மற்றும் உறைபொதியாக்குதல் குறித்து, இந்த பிரிவில் நாம் அறிய உள்ளோம்.
 
-We can start by encapsulating how the clock looks:
+நாம் கடிகாரத்தின் தோற்றத்தை உறைபொதியாக்குதலிருந்து தொடங்கலாம்:
+
 
 ```js{3-6,12}
 function Clock(props) {
@@ -55,11 +56,11 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
+இருப்பினும், முக்கிய தேவையை இது பூர்த்தி செய்யவில்லை: `Clock` ஒர் கடிகையை அமைத்து, UI-ஐ ஒவ்வொரு நொடியும் புதுப்பிப்பதே `Clock`-ன் செயற்படுத்துகை விளக்கமாக இருக்க வேண்டும்.
 
-Ideally we want to write this once and have the `Clock` update itself:
+பொதுவாக, இதை ஒரு முறை எழுதிவிட்டு, `Clock`-ஐ தானாகவே புதுப்பிக்க வைப்பதையே நாம் விரும்புவோம்:
 
 ```js{2}
 ReactDOM.render(
@@ -68,23 +69,25 @@ ReactDOM.render(
 );
 ```
 
-To implement this, we need to add "state" to the `Clock` component.
+இதனை செயல்படுத்த, நாம் "state(நிலை)"-ஐ `Clock`-இனுல் சேர்க்க வேண்டும்.
 
-State is similar to props, but it is private and fully controlled by the component.
+நிலையும் உள்ளீடைப் போன்றதே, ஆனால் இது கூறின் தனிப்பட்டதாகவும் மற்றும் முழுமையான கட்டுப்பாட்டிலும் இருக்கும்.
 
-## Converting a Function to a Class {#converting-a-function-to-a-class}
+## ஓர் செயக்கூற்றை இனக்குழுவாக மாற்றுதல் {#converting-a-function-to-a-class}
 
-You can convert a function component like `Clock` to a class in five steps:
+நீங்கள் `Clock` போன்ற ஓர் செயற்கூறு கூறை ஐந்து படிகளில் இனக்குழுவாக மாற்றலாம்:
 
-1. Create an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), with the same name, that extends `React.Component`.
+1. அதே பெயரில், ஓர் [ES6 இனக்குழு](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) `React.Component`-ஐ நீட்டிக்குமாறு உருவாக்குக.
 
-2. Add a single empty method to it called `render()`.
+2. அதில் `render()` எனும் ஓர் வெற்று செயற்கூறை சேர்க்கவும்.
 
-3. Move the body of the function into the `render()` method.
+3. செயற்கூற்றின் உடலை `render()`-க்கு மாற்றவும்.
 
 4. Replace `props` with `this.props` in the `render()` body.
 
-5. Delete the remaining empty function declaration.
+4. `render()` உடலில் `props`-ஐ `this.props`-ஆக மாற்றவும்.
+
+5. மீதமுள்ள வெற்று செயற்கூறு அறிவிப்பை நீக்கவும்.
 
 ```js
 class Clock extends React.Component {
@@ -99,11 +102,11 @@ class Clock extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
 
-`Clock` is now defined as a class rather than a function.
+`Clock` இப்போது செயற்கூறாக இல்லாமல் இனக்குழுவாக வரையறுக்கப்பட்டுள்ளது.
 
-The `render` method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the `Clock` class will be used. This lets us use additional features such as local state and lifecycle methods.
+ஒவ்வொரு முறை புதுப்பிப்பத்தல் நடக்கும்போதும் `render` செயற்கூறு அழைக்கப்படும், ஆனால் `<Clock />`-ஐ அதே DOM கணுவினுல் வரையும் வரை, ஒரே ஒரு `Clock` இனக்குழுவின் சான்று மட்டுமே பயன்படுத்தப்படும். இது மேலும் சில அம்சங்களான உள் நிலைகள் மற்றும் வாழ்க்கை வட்ட செயற்கூறுகளை நாம் பயன்படுத்த உதவுகின்றது.
 
 ## Adding Local State to a Class {#adding-local-state-to-a-class}
 
@@ -191,7 +194,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
 Next, we'll make the `Clock` set up its own timer and update itself every second.
 
@@ -300,7 +303,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
 Now the clock ticks every second.
 
@@ -435,7 +438,7 @@ function FormattedDate(props) {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
 This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
 
@@ -460,7 +463,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
 Each `Clock` sets up its own timer and updates independently.
 
