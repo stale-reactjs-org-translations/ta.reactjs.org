@@ -8,9 +8,9 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+இந்தப் பக்கம் React கூறுகளில் உள்ள நிலை(state) மற்றும் வாழ்க்கை வட்டம்(lifecycle) குறித்து முன்னுரை அளிக்கிறது. கூறுகளின்  விரிவான API குறிப்பை நீங்கள் [இங்கே காணலாம்](/docs/react-component.html).
 
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
+[முந்தைய பிரிவு ஒன்றில்](/docs/rendering-elements.html#updating-the-rendered-element) குறிப்பிடப்பட்டுள்ள சுழலும் கடிகார எடுத்துக்காட்டை எடுத்துக்கொள்க. [வரையும் உறுப்புகளில்](/docs/rendering-elements.html#rendering-an-element-into-the-dom), UIல் மாற்றம் செய்யும் ஒரே வழியை அறிந்தோம். வரையப்பட்ட வெளியீட்டை மாற்ற நாம் `ReactDOM.render()`யை அழைக்கிறோம்:
 
 ```js{8-11}
 function tick() {
