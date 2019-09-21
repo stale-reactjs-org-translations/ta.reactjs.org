@@ -30,7 +30,7 @@ This tutorial doesn't assume any existing React knowledge.
 * [Completing the Game](#completing-the-game) React ன் **பொதுவான நுட்பங்களை** இது கற்பிக்கும்.
 * [Adding Time Travel](#adding-time-travel) தனிப்பட்ட பலங்களை பற்றி **ஆழமான நுண்ணறிவை** கொடுக்கும்.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+இந்த டுடோரியலில் இருந்து மதிப்பைப் பெற நீங்கள் அனைத்து பிரிவுகளையும் ஒரே நேரத்தில் முடிக்க வேண்டியதில்லை. ஒன்று அல்லது இரண்டு பிரிவுகளாக இருந்தாலும் கூட - உங்களால் முடிந்தவரை பெற முயற்சிக்கவும்.
 
 ### What Are We Building? {#what-are-we-building}
 
