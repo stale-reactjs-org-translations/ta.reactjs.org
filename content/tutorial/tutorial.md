@@ -43,23 +43,21 @@ This tutorial doesn't assume any existing React knowledge.
 
 டிக்-டாக்-டோ விளையாட்டை நீங்கள் அறிந்தவுடன் அதை மூடலாம். இந்த டுடோரியலில் ஒரு எளிய டெம்ப்ளேட்டிலிருந்து தொடங்குவோம். எங்கள் அடுத்த கட்டம் உங்களை அமைப்பதன் மூலம் நீங்கள் விளையாட்டை உருவாக்கத் தொடங்கலாம்.
 
-### Prerequisites {#prerequisites}
+### முன்நிபந்தனைகள் {#Prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+உங்களுக்கு HTML மற்றும் ஜாவாஸ்கிரிப்ட் பற்றி கொஞ்சம் பரிச்சயம் இருப்பதாக நாங்கள் கருதுவோம், ஆனால் நீங்கள் வேறு நிரலாக்க மொழியிலிருந்து வந்திருந்தாலும் அதைப் பின்தொடர முடியும். செயல்பாடுகள்(functions), பொருள்கள்(objects), வரிசைகள்(arrays) மற்றும் குறைந்த அளவிற்கு வகுப்புகள்(classes) போன்ற நிரலாக்கக் கருத்துகளை நீங்கள் அறிந்திருக்கிறீர்கள் என்றும் நாங்கள் கருதுவோம்.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+நீங்கள் ஜாவாஸ்கிரிப்டை மதிப்பாய்வு செய்ய வேண்டுமானால், [இந்த வழிகாட்டியை](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) படிக்க பரிந்துரைக்கிறோம். ஜாவாஸ்கிரிப்ட்டின் சமீபத்திய பதிப்பான ES6 இலிருந்து சில அம்சங்களையும் நாங்கள் பயன்படுத்துகிறோம் என்பதை நினைவில் கொள்க. இந்த டுடோரியலில், நாங்கள் [அம்பு செயல்பாடுகளை(arrow functions)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [வகுப்புகள்](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let ), மற்றும் [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) அறிக்கைகள் பயன்படுத்துகிறோம். ES6 குறியீடு எதை தொகுக்கிறது என்பதை சரிபார்க்க [Babel REPL](babel://es5-syntax-example) ஐப் பயன்படுத்தலாம்.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## டுடோரியலுக்கான அமைப்பு {#setup-for-the-tutorial}
+இந்த டுடோரியலை முடிக்க இரண்டு வழிகள் உள்ளன: உங்கள் உலாவியில்(Browser) குறியீட்டை எழுதலாம் அல்லது உங்கள் கணினியில் உள் மேம்பாட்டு சூழலை(local development environment) அமைக்கலாம்.
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+### அமைவு விருப்பம் 1: உலாவியில் குறியீட்டை எழுது {#setup-option-1-write-code-in-the-browser}
+தொடங்குவதற்கான விரைவான வழி இது!
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+முதலில், இந்த ** [ஸ்டார்டர் குறியீடு](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) ** ஐ புதிய தாவலில்(tab) திறக்கவும். புதிய தாவல்(tab) வெற்று டிக்-டாக்-டோ கேம் போர்டு மற்றும் ரியாக் குறியீட்டைக் காட்ட வேண்டும். இந்த டுடோரியலில் React குறியீட்டை நாங்கள் திருத்துவோம்.
 
-This is the quickest way to get started!
-
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
-
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+நீங்கள் இப்போது இரண்டாவது அமைவு விருப்பத்தைத் தவிர்க்கலாம், மேலும் [கண்ணோட்டம்](#overview) பகுதிக்குச் சென்று React பற்றிய கண்ணோட்டத்தைப் பெறலாம்.
 
 ### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
 
