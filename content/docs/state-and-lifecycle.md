@@ -83,8 +83,6 @@ ReactDOM.render(
 
 3. செயற்கூற்றின் உடலை `render()`-க்கு மாற்றவும்.
 
-4. Replace `props` with `this.props` in the `render()` body.
-
 4. `render()` உடலில் `props`-ஐ `this.props`-ஆக மாற்றவும்.
 
 5. மீதமுள்ள வெற்று செயற்கூறு அறிவிப்பை நீக்கவும்.
@@ -106,13 +104,13 @@ class Clock extends React.Component {
 
 `Clock` இப்போது செயற்கூறாக இல்லாமல் இனக்குழுவாக வரையறுக்கப்பட்டுள்ளது.
 
-ஒவ்வொரு முறை புதுப்பிப்பத்தல் நடக்கும்போதும் `render` செயற்கூறு அழைக்கப்படும், ஆனால் `<Clock />`-ஐ அதே DOM கணுவினுல் வரையும் வரை, ஒரே ஒரு `Clock` இனக்குழுவின் சான்று மட்டுமே பயன்படுத்தப்படும். இது மேலும் சில அம்சங்களான உள் நிலைகள் மற்றும் வாழ்க்கை வட்ட செயற்கூறுகளை நாம் பயன்படுத்த உதவுகின்றது.
+ஒவ்வொரு முறை புதுப்பிப்பத்தல் நடக்கும்போதும் `render` செயற்கூறு அழைக்கப்படும், ஆனால் `<Clock />`-ஐ அதே DOM கணுவினுல் வரையும் வரை, ஒரே ஒரு `Clock` இனக்குழுவின் சான்று மட்டுமே பயன்படுத்தப்படும். இது மேலும் சில அம்சங்களான உள் நிலை மற்றும் வாழ்க்கை வட்ட செயற்கூறுகளை நாம் பயன்படுத்த உதவுகின்றது.
 
-## Adding Local State to a Class {#adding-local-state-to-a-class}
+## ஓர் இனக்குழுவில் உள் நிலை(state)-ஐ சேர்த்தல்
 
-We will move the `date` from props to state in three steps:
+நாம் `date`-ஐ பண்புகளிலிருந்து உள் நிலைக்கு மூன்று படிகளில் மாற்றுவோம்:
 
-1) Replace `this.props.date` with `this.state.date` in the `render()` method:
+1) `render()` செயற்கூறில் உள்ள `this.props.date`-ஐ `this.state.date`-க்கு மாற்றவும்:
 
 ```js{6}
 class Clock extends React.Component {
@@ -127,7 +125,7 @@ class Clock extends React.Component {
 }
 ```
 
-2) Add a [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
+2) தொடக்க `this.state`-ஐ ஒதுக்கும் [ஓர் இனக்குழு ஆக்கி](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor)-ஐ சேர்க்கவும்.
 
 ```js{4}
 class Clock extends React.Component {
@@ -147,7 +145,7 @@ class Clock extends React.Component {
 }
 ```
 
-Note how we pass `props` to the base constructor:
+நாம் `props`-ஐ அடிப்படை ஆக்கிக்கு அனுப்புவதை கவனிக்கவும்:
 
 ```js{2}
   constructor(props) {
@@ -156,9 +154,9 @@ Note how we pass `props` to the base constructor:
   }
 ```
 
-Class components should always call the base constructor with `props`.
+இனக்குழு கூறுகள் எப்போதும் அடிப்படை ஆக்கியை `props` வைத்தே அழைக்கவேண்டும்.
 
-3) Remove the `date` prop from the `<Clock />` element:
+3) `date` பண்பை `<Clock />`-லிருந்து நீக்கவும்:
 
 ```js{2}
 ReactDOM.render(
@@ -167,9 +165,9 @@ ReactDOM.render(
 );
 ```
 
-We will later add the timer code back to the component itself.
+நாம் கடிகை நிரலை கூறினுள்ளேயே பின்பு சேர்க்க உள்ளோம்.
 
-The result looks like this:
+அதன் முடிவு இவ்வாறு இருக்கும்:
 
 ```js{2-5,11,18}
 class Clock extends React.Component {
@@ -196,17 +194,18 @@ ReactDOM.render(
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
-Next, we'll make the `Clock` set up its own timer and update itself every second.
+அடுத்து, நாம் `Clock` தானாகவே தன் கடிகையை அமைத்துக்கொண்டும், ஒவ்வொரு நொடிக்கும் புதுப்பித்துக்கொண்டும் இருக்குமாறு செய்ய வேண்டும்.
 
-## Adding Lifecycle Methods to a Class {#adding-lifecycle-methods-to-a-class}
+## வாழ்க்கை வட்ட செயற்கூறுகளை இனக்குழுவில் இணைத்தல் {#adding-lifecycle-methods-to-a-class}
 
-In applications with many components, it's very important to free up resources taken by the components when they are destroyed.
+நிறைய கூறுகள் கொண்ட செயலிகளில், கூறுகள் அழிக்கப்படும் போது அவை கொண்டு இருந்த வளங்களை விடுவிப்பது மிகவும் முக்கியம். 
 
-We want to [set up a timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) whenever the `Clock` is rendered to the DOM for the first time. This is called "mounting" in React.
+`Clock` DOM-il mudhalil varaiyapadum poluthu, naam [kadikaiyai amaika]((https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)) vendum. Ithu `eatruthal` ena alaikaipadukirathu.
 
-We also want to [clear that timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) whenever the DOM produced by the `Clock` is removed. This is called "unmounting" in React.
+`Clock` DOM-il irunthu neekapadum pothum, naam [kadikaiyai neeka](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) vendum. Ithu `erakkuthal` ena alaikapadukirathu.
 
-We can declare special methods on the component class to run some code when a component mounts and unmounts:
+
+Naam kooru etrapadum pothum irakka padum pothum odumaru sila sirappu seyarkoorukalai kooru vahuppil naam arivikalam.
 
 ```js{7-9,11-13}
 class Clock extends React.Component {
@@ -234,9 +233,9 @@ class Clock extends React.Component {
 }
 ```
 
-These methods are called "lifecycle methods".
+Ivai vaalkai Vatta Seyakoorukal as alaikapadukindrana.
 
-The `componentDidMount()` method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+Koorin veliyeedu DOM-il varayapatta pinar than, `componentDidMount()` seyarkooru odum;
 
 ```js{2-5}
   componentDidMount() {
@@ -247,11 +246,11 @@ The `componentDidMount()` method runs after the component output has been render
   }
 ```
 
-Note how we save the timer ID right on `this` (`this.timerID`).
+Ippothu naam kadikai-yin ID ai `this` (`this.timerID`)-il pathivu seiya pogirom.
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+`this.props` React-aal uruvaaka pattalum, `this.state`-iku thani artham irunthalum, aanal neengal thagaval ottathil panguperatha ethanai puthiya thuraikal vendumanalum vaguppil serka iyalum.
 
-We will tear down the timer in the `componentWillUnmount()` lifecycle method:
+`componentWillUnmount()`-ennum vaalkai vatta seyakooril ulla kadikaiyai pirithu parpom.
 
 ```js{2}
   componentWillUnmount() {
@@ -259,9 +258,9 @@ We will tear down the timer in the `componentWillUnmount()` lifecycle method:
   }
 ```
 
-Finally, we will implement a method called `tick()` that the `Clock` component will run every second.
+Kadaisiyaga, naam `tick()` ennum seyakoorai `Clock` kooril ovvoru nodiyum odumaru seiya vendum.
 
-It will use `this.setState()` to schedule updates to the component local state:
+Ithu `this.setState()`-ai koorin ul-nilai matrangalai thittamida payanpadukirathu.
 
 ```js{18-22}
 class Clock extends React.Component {
@@ -305,70 +304,70 @@ ReactDOM.render(
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
-Now the clock ticks every second.
+Ippothu kadikaram ovvoru nodiyum thudikrathu.
 
-Let's quickly recap what's going on and the order in which the methods are called:
+Ithuvarai nadanthavaikalaiyum seyarkoorukal alaikapadum muraiyaium kanbom:
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+1) `<Clock/>` `ReactDOM.render()`-iku koduka padum pothu, React `Clock` koorin aaki-yai alaikindrathu. `Clock` tharpothaiya nerathai kaata vendiyathalal, athu `this.state` -ai tharpothaiya nerathai konda porulai veithu thodanki veikrathu. Nam inda nilaiyai pinbu matra irukirom.
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+2) Aduthathaga React `Clock` koorin `render()` seyarkoorai alaikirathu. Ithai veithuthan React thiraiyil enna kaata vendum enbathai arindu kolkirathu. Pinbu React `Clock`-in varaithal velipatirku porunthumaru DOM ai matri amaikirathu.
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle method. Inside it, the `Clock` component asks the browser to set up a timer to call the component's `tick()` method once a second.
+3) `Clock`-in velipadu DOM-il nulaika patta pin, React `componentDidMount()` ennum vaalkai vatta seyarkoorai alaikindrathu. Athanul, `Clock` kooru ovvoru nodiyum thanthu `tick()` seyarkoorai alaikum kadikai ondrai amaikumaru browser-ai kettukolkirathu.
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+4) `tick()` seyarkooru ovvoru nodiyum browser-al alaikapadukirathu. Athanul, `Clock` kooru `setState()`-ai tharupothaiya nerathai konda oru porulai alaithu oru UI matrathai thittamidukirathu. Inda `setState()` vilaivaga, React nilai matrathai arinthu kondu, `render()` seyarkoorai alaithu thiraiyil enna iruka vendum enbathai meendum ariumaru ketukolkirathu. Inda murai, `render()` seyarkoorin `this.state.data` verupattu ullathal, varaithal velipattil matrapatta neram irukum. React DOM-ai atharku etravaru matri amaikirathu.
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
+5) `Clock` kooru eppothavathu DOM-il irunthu neeka pattal, React `componentWillUnmount()`-ennum vaalkai vatta seyarkoorai alaikirathu. Athu kadikaiyai niruthukirathu.
 
-## Using State Correctly {#using-state-correctly}
+## Nilai-ai sariyaga payanpadutha
 
-There are three things you should know about `setState()`.
+`setState()`-ai patri moondru visayangalai neengal arindu kolla vendum.
 
-### Do Not Modify State Directly {#do-not-modify-state-directly}
+### Nilaiyai neradiyaga matri amaika koodathu
 
-For example, this will not re-render a component:
+Eduthukaataga, ithu kooril maru varaithalai undakkathu:
 
 ```js
-// Wrong
+// தவறு
 this.state.comment = 'Hello';
 ```
 
 Instead, use `setState()`:
 
 ```js
-// Correct
+// சரி
 this.setState({comment: 'Hello'});
 ```
 
-The only place where you can assign `this.state` is the constructor.
+`this.state`-ai aakiyil mattume othuka vendum.
 
-### State Updates May Be Asynchronous {#state-updates-may-be-asynchronous}
+### Nilai matrangal otthisaikathavaiyaga irukalam
 
-React may batch multiple `setState()` calls into a single update for performance.
+React pala `setState()` alaipuhalai seyalthiranukaga orae matramaga kaiaalalam.
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+`this.props`-um `this.state`-um othisaikamal maruvathal, adutha nilaiyai kanakkiduvatharku athan mathippu-hali nambi iruka koodathu.
 
-For example, this code may fail to update the counter:
+Eduthukaataga, inda niral kanakeduppanai matramal pogalam
 
 ```js
-// Wrong
+// தவறு
 this.setState({
   counter: this.state.counter + this.props.increment,
 });
 ```
 
-To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+Ithai seri seiya, porulukku pathilaha seyalpaatai petrukollum `setState()`-in matroru uruvathai payanpadutha vendum. Anda seyalpaadu mundaya nilayai thanathu muthal ulledagavum, anda matrathin pothu ulla panpuhalai irandam ulledaga petrukollum.
 
 ```js
-// Correct
+// சரி
 this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
 ```
 
-We used an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) above, but it also works with regular functions:
+Melae naam [Ammbu Seyalpaatai](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) payan paduthi ullom, aanal avaiyum valakkamana seyalpaaduhalai pol velai seiyakoodiyavai aagum.
 
 ```js
-// Correct
+// சரி
 this.setState(function(state, props) {
   return {
     counter: state.counter + props.increment
@@ -376,11 +375,11 @@ this.setState(function(state, props) {
 });
 ```
 
-### State Updates are Merged {#state-updates-are-merged}
+### Nilai matrangal ondrakkapadum
 
-When you call `setState()`, React merges the object you provide into the current state.
+`setState()`-ai alaikum pothu, React neengal kodukkum porulai tharpothaiya nilaiyil ondrakkukirathu.
 
-For example, your state may contain several independent variables:
+Eduthukaataga, ungal nilai palveru thatcharbu maarihalai kondathaga irukalam.
 
 ```js{4,5}
   constructor(props) {
@@ -392,7 +391,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+Pinbu neengala avaihalai thani thani `setState()` alaipuhalil matram seiyalam:
 
 ```js{4,10}
   componentDidMount() {
@@ -410,27 +409,27 @@ Then you can update them independently with separate `setState()` calls:
   }
 ```
 
-The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+Ondrakkapaduthal maelottamanathe, athanal `this.setState({comments})` `this.state.posts`-ai apdiye vittu vittu `this.state.comments`-ai muluvathumaga matrividukirathu.
 
-## The Data Flows Down {#the-data-flows-down}
+## Keele paayum thagaval ottam {#the-data-flows-down}
 
-Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether it is defined as a function or a class.
+Petror kooruhalum kulanthai kooruhalum oru kooru nilai kondatha iliya ena ariya iyalathu, atanal avai seiyalpaatalo vahuppalo varaiarukka pattathu ena kavaipada thevai illai.
 
-This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+Ithanalaye naam nilaiyai ullpathaga alaikirom. Athanai amaithu sontham kollum koorai thavira veru yarum anuga mudiyathu.
 
-A component may choose to pass its state down as props to its child components:
+Oru kooru thanthu nilai-ai thanathu kulanthaihaluku anupalam.
 
 ```js
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
-This also works for user-defined components:
+Ithu payanar-varaiyarutha koorukalukum porunthum.
 
 ```js
 <FormattedDate date={this.state.date} />
 ```
 
-The `FormattedDate` component would receive the `date` in its props and wouldn't know whether it came from the `Clock`'s state, from the `Clock`'s props, or was typed by hand:
+`FormattedDate` kooru `date`-ai thanathu panpuhalil petrukollum, aanal athanal anda mathipu `Clock`-in nilai-yil irunthu vanthatha allathu `Clock`-in panpuhalil irunthu vanthatha allathu kaihalal eluthapattatha ena ariya mudiyathu.
 
 ```js
 function FormattedDate(props) {
@@ -440,11 +439,11 @@ function FormattedDate(props) {
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
-This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
+Immuraiyanathu "mel irunthu keel" allathu "orthisai" thagaval ottam ena alaika padukirathu. Ella nilaihalum etho oru kuripitta koorirku sonthamanathakum. Anda nilaiyil irunthu kondu varapatta thagaval allathu UI DOM marathil atahn "keel" ulla koorukalai matume pathikum.
 
-If you imagine a component tree as a waterfall of props, each component's state is like an additional water source that joins it at an arbitrary point but also flows down.
+Kooru marathai panbuhalin aruviyaga karpanai seithukondal, ovvoru koorin nilaihalum neer keele payum pothum thannichaiyaga sernthu kollum puthu neer moolangalaga eduthu kollalam.
 
-To show that all components are truly isolated, we can create an `App` component that renders three `<Clock>`s:
+Kooruhalai mulumaiyaga thanimai padutha, naam moondru `Clock`-kalai varaiyum oru `App` koorai uruvaakalam.
 
 ```js{4-6}
 function App() {
@@ -465,6 +464,6 @@ ReactDOM.render(
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
-Each `Clock` sets up its own timer and updates independently.
+Ovvoru `Clock`-um thanathu sontha kadiakaiyai amaithu kondu, matrangalai thannichaya merkolkindrana.
 
-In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+React seyalihalil, oru kooru nilai kondatha illaiya enbathu pinnalil marakoodiya mukiyamana seiyalpaatu vivaramaga kollapadukirathu. Neengal Nilai ilatha kooril nilai ulla kooruhalai yum, nilai ulla kooru halil nilai illathavai halaium payanpaduthalam.
