@@ -20,7 +20,7 @@ more:
 channels:
   title: கலந்துரையாடல் பகுதிகள்
   items:
-    - title: Github
+    - title: GitHub
       to: https://github.com/facebook/react
       external: true
     - title: Stack Overflow
