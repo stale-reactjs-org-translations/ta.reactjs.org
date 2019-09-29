@@ -1,24 +1,24 @@
 community:
-  title: Community
+  title: சமூகம்
 
 docs:
-  title: Docs
+  title: ஆவணங்கள்
 
 more:
-  title: More
+  title: மேலும்
   items:
-    - title: Tutorial
+    - title: பயிற்சிகள்
       to: /tutorial/tutorial.html
-    - title: Blog
+    - title: வலைப்பதிவு
       to: /blog
-    - title: Acknowledgements
+    - title: அங்கீகாரங்கள்
       to: /acknowledgements.html
     - title: React Native
       to: https://facebook.github.io/react-native/
       external: true
 
 channels:
-  title: Channels
+  title: கலந்துரையாடல் பகுதிகள்
   items:
     - title: GitHub
       to: https://github.com/facebook/react
