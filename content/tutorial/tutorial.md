@@ -30,35 +30,34 @@ This tutorial doesn't assume any existing React knowledge.
 * [Completing the Game](#completing-the-game) React ன் **பொதுவான நுட்பங்களை** இது கற்பிக்கும்.
 * [Adding Time Travel](#adding-time-travel) தனிப்பட்ட பலங்களை பற்றி **ஆழமான நுண்ணறிவை** கொடுக்கும்.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+இந்த டுடோரியலில் இருந்து மதிப்பைப் பெற நீங்கள் அனைத்து பிரிவுகளையும் ஒரே நேரத்தில் முடிக்க வேண்டியதில்லை. ஒன்று அல்லது இரண்டு பிரிவுகளாக இருந்தாலும் கூட - உங்களால் முடிந்தவரை பெற முயற்சிக்கவும்.
 
 ### What Are We Building? {#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+இந்த டுடோரியலில், react உடன் ஒரு interactive டிக்-டாக்-டோ (Tic-Tac-Toe) விளையாட்டை எவ்வாறு உருவாக்குவது என்பதைக் காண்பிப்போம்.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+நாங்கள் இங்கே என்ன கட்டமைக்கிறோம் என்பதை நீங்கள் காணலாம்: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Code உங்களுக்கு புரியவில்லை என்றால், அல்லது code தொடரியல் உங்களுக்கு அறிமுகமில்லாவிட்டால், கவலைப்பட வேண்டாம்! இந்த டுடோரியலின் குறிக்கோள், எதிர்வினை மற்றும் அதன் தொடரியல் ஆகியவற்றைப் புரிந்துகொள்ள உங்களுக்கு உதவுவதாகும்.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+டுடோரியலைத் தொடர்வதற்கு முன் டிக்-டாக்-டோ விளையாட்டைப் பார்க்க பரிந்துரைக்கிறோம். நீங்கள் கவனிக்க வேண்டிய அம்சங்களில் ஒன்று, விளையாட்டின் குழுவின் வலதுபுறத்தில் எண்ணிடப்பட்ட பட்டியல் உள்ளது. இந்த பட்டியல் விளையாட்டில் நிகழ்ந்த அனைத்து நகர்வுகளின் வரலாற்றையும் உங்களுக்கு வழங்குகிறது, மேலும் விளையாட்டு முன்னேறும்போது புதுப்பிக்கப்படும்.
 
-### Prerequisites {#prerequisites}
+டிக்-டாக்-டோ விளையாட்டை நீங்கள் அறிந்தவுடன் அதை மூடலாம். இந்த டுடோரியலில் ஒரு எளிய டெம்ப்ளேட்டிலிருந்து தொடங்குவோம். எங்கள் அடுத்த கட்டம் உங்களை அமைப்பதன் மூலம் நீங்கள் விளையாட்டை உருவாக்கத் தொடங்கலாம்.
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+### முன்நிபந்தனைகள் {#Prerequisites}
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+உங்களுக்கு HTML மற்றும் ஜாவாஸ்கிரிப்ட் பற்றி கொஞ்சம் பரிச்சயம் இருப்பதாக நாங்கள் கருதுவோம், ஆனால் நீங்கள் வேறு நிரலாக்க மொழியிலிருந்து வந்திருந்தாலும் அதைப் பின்தொடர முடியும். செயல்பாடுகள்(functions), பொருள்கள்(objects), வரிசைகள்(arrays) மற்றும் குறைந்த அளவிற்கு வகுப்புகள்(classes) போன்ற நிரலாக்கக் கருத்துகளை நீங்கள் அறிந்திருக்கிறீர்கள் என்றும் நாங்கள் கருதுவோம்.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+நீங்கள் ஜாவாஸ்கிரிப்டை மதிப்பாய்வு செய்ய வேண்டுமானால், [இந்த வழிகாட்டியை](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) படிக்க பரிந்துரைக்கிறோம். ஜாவாஸ்கிரிப்ட்டின் சமீபத்திய பதிப்பான ES6 இலிருந்து சில அம்சங்களையும் நாங்கள் பயன்படுத்துகிறோம் என்பதை நினைவில் கொள்க. இந்த டுடோரியலில், நாங்கள் [அம்பு செயல்பாடுகளை(arrow functions)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [வகுப்புகள்](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let ), மற்றும் [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) அறிக்கைகள் பயன்படுத்துகிறோம். ES6 குறியீடு எதை தொகுக்கிறது என்பதை சரிபார்க்க [Babel REPL](babel://es5-syntax-example) ஐப் பயன்படுத்தலாம்.
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+## டுடோரியலுக்கான அமைப்பு {#setup-for-the-tutorial}
+இந்த டுடோரியலை முடிக்க இரண்டு வழிகள் உள்ளன: உங்கள் உலாவியில்(Browser) குறியீட்டை எழுதலாம் அல்லது உங்கள் கணினியில் உள் மேம்பாட்டு சூழலை(local development environment) அமைக்கலாம்.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### அமைவு விருப்பம் 1: உலாவியில் குறியீட்டை எழுது {#setup-option-1-write-code-in-the-browser}
+தொடங்குவதற்கான விரைவான வழி இது!
 
-This is the quickest way to get started!
+முதலில், இந்த ** [ஸ்டார்டர் குறியீடு](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) ** ஐ புதிய தாவலில்(tab) திறக்கவும். புதிய தாவல்(tab) வெற்று டிக்-டாக்-டோ கேம் போர்டு மற்றும் ரியாக் குறியீட்டைக் காட்ட வேண்டும். இந்த டுடோரியலில் React குறியீட்டை நாங்கள் திருத்துவோம்.
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
-
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+நீங்கள் இப்போது இரண்டாவது அமைவு விருப்பத்தைத் தவிர்க்கலாம், மேலும் [கண்ணோட்டம்](#overview) பகுதிக்குச் சென்று React பற்றிய கண்ணோட்டத்தைப் பெறலாம்.
 
 ### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
 
