@@ -24,11 +24,19 @@ Stack Overflow ஆனது பொதுவாக அதிகளவானொர
 
 ஒவ்வொரு குழுக்களும் பல்லாயிரக்கக்கணக்கான வல்லுநர்களை கொண்டுள்ளது.
 
+<<<<<<< HEAD
 * [DEV இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://dev.to/t/react)
 * [Hashnode இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://hashnode.com/n/reactjs)
 * [Reactiflux இல் இணைய கலந்துரையாடல் பகுதி](https://discord.gg/0ZcbPKXt5bZjGY5n)
 * [Reddit இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://www.reddit.com/r/reactjs/)
 * [Spectrum இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://spectrum.chat/react)
+=======
+* [DEV's React community](https://dev.to/t/react)
+* [Hashnode's React community](https://hashnode.com/n/reactjs)
+* [Reactiflux online chat](https://discord.gg/reactiflux)
+* [Reddit's React community](https://www.reddit.com/r/reactjs/)
+* [Spectrum's React community](https://spectrum.chat/react)
+>>>>>>> 647b639259919f96e9b667bf41ec16621e1b84dc
 
 ## செய்திகள் {#news}
 
