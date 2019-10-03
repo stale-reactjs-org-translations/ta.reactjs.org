@@ -59,50 +59,53 @@ This tutorial doesn't assume any existing React knowledge.
 
 நீங்கள் இப்போது இரண்டாவது அமைவு விருப்பத்தைத் தவிர்க்கலாம், மேலும் [கண்ணோட்டம்](#overview) பகுதிக்குச் சென்று React பற்றிய கண்ணோட்டத்தைப் பெறலாம்.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### அமைவு விருப்பம் 2: உள் மேம்பாட்டு சூழல் {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+இது முற்றிலும் விருப்பமானது மற்றும் இந்த டுடோரியலுக்கு தேவையில்லை!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>
+விரும்பினால்: உங்களுக்கு விருப்பமான உரை திருத்தியைப் பயன்படுத்தி local-ல் பின்தொடர்வதற்கான வழிமுறைகள்</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+இந்த அமைப்பிற்கு அதிக வேலை தேவைப்படுகிறது, ஆனால் உங்கள் விருப்பப்படி ஒரு எடிட்டரைப் பயன்படுத்தி டுடோரியலை முடிக்க உங்களை அனுமதிக்கிறது. பின்பற்ற வேண்டிய படிகள் இங்கே:
 
+1. [Node.js](https://nodejs.org/en/) இன் சமீபத்திய பதிப்பை நீங்கள் நிறுவியுள்ளீர்கள் என்பதை உறுதிப்படுத்தவும்.
+
+2. புதிய திட்டத்தை(project) உருவாக்க [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) பின்பற்றவும்.
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. புதிய திட்டத்தின் `src/` கோப்புறையில் உள்ள எல்லா கோப்புகளையும் நீக்கவும் .
 
-> Note:
+> குறிப்பு:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**முழு `src` கோப்புறையையும், அதற்குள் இருக்கும் அசல் மூலக் கோப்புகளையும் நீக்க வேண்டாம்.** இயல்புநிலை(default) மூலக் கோப்புகளை இந்த திட்டத்திற்கான எடுத்துக்காட்டுகளுடன் அடுத்த கட்டத்தில் மாற்றுவோம்.
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# 
+நீங்கள் மேக் அல்லது லினக்ஸைப் பயன்படுத்துகிறீர்கள் என்றால்:
 rm -f *
 
-# Or, if you're on Windows:
+# அல்லது, நீங்கள் விண்டோஸில் இருந்தால்:
 del *
 
-# Then, switch back to the project folder
+# பின்னர், திட்ட கோப்புறைக்கு மாறவும்
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. `Src/` கோப்புறையில் `index.css` என்ற கோப்பைச் சேர்க்கவும் [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. `Src/` கோப்புறையில் `index.js` என்ற கோப்பைச் சேர்க்கவும்[this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. `Src/` கோப்புறையில் `index.js` இன் மேலே இந்த மூன்று வரிகளையும் சேர்க்கவும்:
 
 ```js
 import React from 'react';
@@ -110,10 +113,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+இப்போது நீங்கள் திட்டக் கோப்புறையில் `npm start` ஐ இயக்கி, உலாவியில்` http://localhost:3000` ஐத் திறந்தால், நீங்கள் ஒரு வெற்று tic-tac-toe புலத்தைக் காண வேண்டும்..
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
-
+உங்கள் எடிட்டருக்கான தொடரியல் சிறப்பம்சத்தை உள்ளமைக்க [இந்த வழிமுறைகளை](https://babeljs.io/docs/editors/) பின்பற்ற பரிந்துரைக்கிறோம்.
 </details>
 
 ### Help, I'm Stuck! {#help-im-stuck}
