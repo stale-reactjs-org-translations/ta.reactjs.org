@@ -26,7 +26,7 @@ Stack Overflow ஆனது பொதுவாக அதிகளவானொர
 
 * [DEV இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://dev.to/t/react)
 * [Hashnode இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://hashnode.com/n/reactjs)
-* [Reactiflux இல் இணைய கலந்துரையாடல் பகுதி](https://discord.gg/0ZcbPKXt5bZjGY5n)
+* [Reactiflux இல் இணைய கலந்துரையாடல் பகுதி](https://discord.gg/reactiflux)
 * [Reddit இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://www.reddit.com/r/reactjs/)
 * [Spectrum இல் React தொடர்பான கலந்துரையாடல் பகுதி](https://spectrum.chat/react)
 

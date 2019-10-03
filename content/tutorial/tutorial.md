@@ -120,7 +120,7 @@ import './index.css';
 
 ### Help, I'm Stuck! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
 
 ## Overview {#overview}
 
