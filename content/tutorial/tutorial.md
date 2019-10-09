@@ -118,13 +118,14 @@ import './index.css';
 உங்கள் எடிட்டருக்கான தொடரியல் சிறப்பம்சத்தை உள்ளமைக்க [இந்த வழிமுறைகளை](https://babeljs.io/docs/editors/) பின்பற்ற பரிந்துரைக்கிறோம்.
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### உதவி, நான் மாட்டிக்கொண்டேன்! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+நீங்கள் சிக்கிக்கொண்டால், [சமூக ஆதரவு ஆதாரங்களை](/community/support.html) பாருங்கள். குறிப்பாக, [Reactiflux Chat](https://discord.gg/reactiflux) விரைவாக உதவியைப் பெறுவதற்கான சிறந்த வழியாகும். உங்களிடம் பதில் கிடைக்கவில்லை என்றால், அல்லது நீங்கள் சிக்கிக்கொண்டால், தயவுசெய்து ஒரு சிக்கலைத்(issue) தாக்கல் செய்யுங்கள், நாங்கள் உங்களுக்கு உதவுவோம்.
 
-## Overview {#overview}
 
-Now that you're set up, let's get an overview of React!
+## கண்ணோட்டம் {#overview}
+
+இப்போது நீங்கள் setup அமைத்துள்ளீர்கள், react பற்றிய ஒரு கண்ணோட்டத்தைப் பெறுவோம்!
 
 ### What Is React? {#what-is-react}
 
