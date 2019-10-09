@@ -1,9 +1,9 @@
 ---
 id: error-decoder
-title: Error Decoder
+title: பிழை டிகோடர்
 permalink: docs/error-decoder.html
 ---
 
-In the minified production build of React, we avoid sending down full error messages in order to reduce the number of bytes sent over the wire.
+Reactன் குறைக்கப்பட்ட உற்பத்தி கட்டமைப்பில், கம்பி வழியாக அனுப்பப்படும் பைட்டுகளின் எண்ணிக்கையைக் குறைப்பதற்காக முழு பிழை செய்திகளை அனுப்புவதைத் தவிர்க்கிறோம்.
 
-We highly recommend using the development build locally when debugging your app since it tracks additional debug info and provides helpful warnings about potential problems in your apps, but if you encounter an exception while using the production build, this page will reassemble the original text of the error.
+உங்கள் appல் பிழைதிருத்தம் செய்யும் போது development buildஐ பயன்படுத்த நாங்கள் மிகவும் பரிந்துரைக்கிறோம், ஏனெனில் இது கூடுதல் பிழைத்திருத்தத் தகவலைக் கண்காணிக்கும் மற்றும் உங்கள் appsல் உள்ள சிக்கல்களைப் பற்றிய பயனுள்ள எச்சரிக்கைகளை வழங்குகிறது, ஆனால் prod buildஐ பயன்படுத்தும் போது விதிவிலக்கு ஏற்பட்டால், இந்தப் பக்கம் அசல் பிழை உரையை மீண்டும் இணைக்கும்.
