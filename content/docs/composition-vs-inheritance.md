@@ -1,6 +1,6 @@
 ---
 id: composition-vs-inheritance
-title: Composition vs Inheritance
+title: கலவை மாறாக பரம்பரை
 permalink: docs/composition-vs-inheritance.html
 redirect_from:
   - "docs/multiple-components.html"
@@ -8,9 +8,9 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+React ஆனது சக்திவாய்ந்த கலவை மாதிரியை உள்ளது, மேலும் குறியீடுகளை கூறுகளுக்கு இடையில் மறுபடி உபயோகிக்க மற்றும் பரம்பரை வழியிலிருந்து பெறுதலுக்கு பதிலாக கலவையை பயன்படுத்துவதை நாங்கள் பரிந்துரைக்கிறோம்.
 
-In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.
+இந்த பிரிவில், புதிதாக React கற்கும் மென்பொருள் உருவாக்குபவரின் பல சமயங்களில் வாரும் பரம்பரை வழியிலிருந்து பெறுதலின் சில பிரச்சினைகள் நாம் சிந்திப்போம்.
 
 ## Containment {#containment}
 
