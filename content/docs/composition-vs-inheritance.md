@@ -28,7 +28,7 @@ function FancyBorder(props) {
 }
 ```
 
-This lets other components pass arbitrary children to them by nesting the JSX:
+இது மற்ற கூறுகள் தன்னிச்சையான குழந்தைகளை JSX மூலம் அனுப்ப அனுமதிக்கிறது:
 
 ```js{4-9}
 function WelcomeDialog() {
@@ -82,11 +82,11 @@ function App() {
 
 `<Contacts />` மற்றும் `<Chat />` போன்ற React ன் கூறுகள் வெறும் பொருட்களோ ஆகும், அதனால் நீங்கள் மற்ற தகவல்களை பண்புகள் வழியாக அனுப்புவதை போன்றே அவற்றையும் ஆனுப்பலாம். இந்த அணுகுமுறை மற்ற நூலகங்கள் உள்ள "இடங்களை" உங்களுக்கு நினைவூட்டக்கூடும் ஆனால் React ல் நீங்கள் ஆனுப்பும் எந்த பண்புகளுக்கும் வரம்புகள் எதுவும் இல்லை.
 
-## Specialization {#specialization}
+##  சிறப்பு {#specialization}
 
-Sometimes we think about components as being "special cases" of other components. For example, we might say that a `WelcomeDialog` is a special case of `Dialog`.
+சில நேரங்களில் கூறுகலானது மற்ற கூறுகளின் "சிறப்பு வகையாக" உங்களுக்கு தோன்றலாம். உதாரணத்திற்கு, `WelcomeDialog` ஆனது `Dialog`ன் சிறப்பு வகையாக சொல்லலாம்.
 
-In React, this is also achieved by composition, where a more "specific" component renders a more "generic" one and configures it with props:
+React'ல், கலவையைக் கொண்டு இதனை அடையலாம், ஒரு குறிப்பிட்ட கூறானது மிகவும் பொதுவான கூற' ஐ வரையும் மற்றும் பண்புகள் வழியாக அவற்றை கட்டமைக்கப்படும்படி இருக்கும்:
 
 ```js{5,8,16-18}
 function Dialog(props) {
@@ -113,7 +113,7 @@ function WelcomeDialog() {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
 
-Composition works equally well for components defined as classes:
+வகுப்புக்குள் வரையறுக்கப்பட்ட கூறுக்கு இணையாக கலவை ஆனது செய்யல்படும்:
 
 ```js{10,27-31}
 function Dialog(props) {
@@ -163,10 +163,10 @@ class SignUpDialog extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## So What About Inheritance? {#so-what-about-inheritance}
+## எனவே பரம்பரை என்றால் என்ன? {#so-what-about-inheritance}
 
-At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+Facebook இல், ஆயிரக்கணக்கான கூறுகளில் React'ல் பயன்படுத்துகிறோம், மற்றும் நாங்கள் பரம்பரை முறையை கொண்டு கூறுகளை உருவாக்கும் எந்த பயன்பாட்டையும் கண்டதில்லை.
 
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+கூறுகளின் தோற்றம், நடத்தை'ஐ பண்பு மற்றும் கலவை முறையின் மூலமாக நீங்கள் உங்களுக்கு தேவையான தோற்றதை விளக்கமான மற்றும் பாதுகாப்பான வழியில் மாற்றி அமைக்கலாம். கூற்றுகளானது தன்னிச்சையான பண்பு, பழைய மதிப்புகள் உட்பட, React உறுப்புகள், அல்லது செயல்பாடுகளை ஏற்றுக்கொள்ளும் என்பதை நினைவில் வைத்துக்கொள்ளுங்கள்.
 
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.
+UI அல்லாது செயல்பாடுகளை கூறுகளுக்கு இடையில் மறுபடி உபயோகிக்க வேண்டும் என்றால்,நாங்கள் அவற்றை தனிப்பட்ட JavaScript தொகுதியாக பிரித்தெடுக்க பரிந்துரைக்கிறோம். இவ்வகை கூறுகளை நீட்டிக்காமல் அதை இறக்குமதி செய்து அவைற்றை செயல்பாடாக, பொருளாக, அல்லது ஒரு வகுப்பாக உபயோகிக்கலாம் .
