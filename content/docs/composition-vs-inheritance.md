@@ -1,6 +1,6 @@
 ---
 id: composition-vs-inheritance
-title: Composition vs Inheritance
+title: கலவை மாறாக மரபுரிமை
 permalink: docs/composition-vs-inheritance.html
 redirect_from:
   - "docs/multiple-components.html"
@@ -8,15 +8,15 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+React ஆனது சக்திவாய்ந்த கலவை மாதிரியை கொண்டுள்ளது, மேலும் குறியீடுகளை கூறுகளுக்கு இடையில் மறுபடி உபயோகிக்க மற்றும் மரபுரிமை வழி பெறுதலுக்கு பதிலாக கலவை முறையை பயன்படுத்துவதை நாங்கள் பரிந்துரைக்கிறோம்.
 
-In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.
+இந்த பிரிவில், புதிதாக React ஐ கற்கும் மென்பொருள் உருவாக்குபவரின் பல சமயங்களில் வாரும் மரபுரிமை வழி பெறுதலின் சில பிரச்சினைகள் நாம் கருத்தில் கொள்வோம். மற்றும் அவற்றை கலவை முறையின் மூலமாக எவ்வாறு தீர்வுகாண முடியும் என்பதைக் காணலாம்.
 
-## Containment {#containment}
+## கட்டுப்படுத்துதல் {#containment}
 
-Some components don't know their children ahead of time. This is especially common for components like `Sidebar` or `Dialog` that represent generic "boxes".
+சில கூறுகளுக்கு சிறிது நேரத்திற்க்கு முன்பு வரை தனது குழந்தைகள் கூறுகள் (children) தெரிவது இல்லை. இது குறிப்பாக `Sidebar` அல்லது `Dialog` போன்ற கூறுகளுக்கு பொதுவானவை மேலும் அவை பொதுவான "பெட்டிகளை" குறிக்கும்.
 
-We recommend that such components use the special `children` prop to pass children elements directly into their output:
+அவ்விதமான கூறுகளுக்கு பிரத்யேகமான `children` பண்பு முறையின் மூலமாக குழந்தைகள் கூறுகளை (children) நேரடியாக அவற்றின் வெளிப்பாட்டிற்கு அனுப்ப நாங்கள் பரிந்துரைக்கிறோம்.
 
 ```js{4}
 function FancyBorder(props) {
@@ -28,28 +28,28 @@ function FancyBorder(props) {
 }
 ```
 
-This lets other components pass arbitrary children to them by nesting the JSX:
+இது மற்ற கூறுகள் தன்னிச்சையான குழந்தைகளை (children) JSX மூலம் அனுப்ப அனுமதிக்கிறது:
 
 ```js{4-9}
 function WelcomeDialog() {
   return (
     <FancyBorder color="blue">
       <h1 className="Dialog-title">
-        Welcome
+        வரவேற்கிறோம்
       </h1>
       <p className="Dialog-message">
-        Thank you for visiting our spacecraft!
+        எங்கள் விண்கலத்தை பார்வையிட்டதற்கு நன்றி!
       </p>
     </FancyBorder>
   );
 }
 ```
 
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
+**[CodePen-ல் முயற்சி செய்க](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Anything inside the `<FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a `children` prop. Since `FancyBorder` renders `{props.children}` inside a `<div>`, the passed elements appear in the final output.
+`<FancyBorder>` உள்ளே அனுப்பப்படும் எதுவானாலும் JSX குறிச்சொல்லானது அவற்றை கூறின் குழந்தை (children) பண்பாகவே எடுத்துக்கொள்ளும். ஏனெனில் `FancyBorder` ஆனது  `{props.children}` ஐ `<div>` க்குள் தான் வரையும், அனுப்பப்பட்ட கூறானது இறுதி வெளிப்பாட்டில் தோன்றும்.
 
-While this is less common, sometimes you might need multiple "holes" in a component. In such cases you may come up with your own convention instead of using `children`:
+இதுபோன்ற முறை குறைவாகவே காணப்படுகிறது, சில நேரங்களில் உங்களுக்கு ஓரே கூறில் பல "துளைகள்" தேவைப்படலாம். இதுபோன்ற சந்தர்ப்பங்களில் நீங்கள் `children` ஐ பயன்படுத்துவதற்கு பதிலாக உங்கள் சொந்த வழக்கத்தை கொண்டு வரலாம்:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -78,15 +78,15 @@ function App() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React elements like `<Contacts />` and `<Chat />` are just objects, so you can pass them as props like any other data. This approach may remind you of "slots" in other libraries but there are no limitations on what you can pass as props in React.
+`<Contacts />` மற்றும் `<Chat />` போன்ற React ன் கூறுகள் வெறும் பொருட்களோ ஆகும், அதனால் நீங்கள் மற்ற தகவல்களை பண்புகள் வழியாக அனுப்புவதை போன்றே அவற்றையும் ஆனுப்பலாம். இந்த அணுகுமுறை மற்ற நூலகங்கள் உள்ள "இடங்களை" உங்களுக்கு நினைவூட்டக்கூடும் ஆனால் React ல் நீங்கள் ஆனுப்பும் எந்த பண்புகளுக்கும் வரம்புகள் எதுவும் இல்லை.
 
-## Specialization {#specialization}
+##  சிறப்பறிவு {#specialization}
 
-Sometimes we think about components as being "special cases" of other components. For example, we might say that a `WelcomeDialog` is a special case of `Dialog`.
+சில நேரங்களில் கூறுகலானது மற்ற கூறுகளின் "சிறப்பு வகையாக" உங்களுக்கு தோன்றலாம். உதாரணத்திற்கு, `WelcomeDialog` ஆனது `Dialog`ன் சிறப்பு வகையாக சொல்லலாம்.
 
-In React, this is also achieved by composition, where a more "specific" component renders a more "generic" one and configures it with props:
+React'ல், கலவையைக் கொண்டு இதனை அடையலாம், ஒரு குறிப்பிட்ட கூறானது மிகவும் பொதுவான கூற' ஐ வரையும் மற்றும் பண்புகள் வழியாக அவற்றை கட்டமைக்கப்படும்படி இருக்கும்:
 
 ```js{5,8,16-18}
 function Dialog(props) {
@@ -105,15 +105,15 @@ function Dialog(props) {
 function WelcomeDialog() {
   return (
     <Dialog
-      title="Welcome"
-      message="Thank you for visiting our spacecraft!" />
+      title="வரவேற்கிறோம்"
+      message="எங்கள் விண்கலத்தை பார்வையிட்டதற்கு நன்றி!" />
   );
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
 
-Composition works equally well for components defined as classes:
+வகுப்புகளாக வரையறுக்கப்பட்ட கூறுக்கு இணையாக கலவை ஆனது செய்யல்படும்:
 
 ```js{10,27-31}
 function Dialog(props) {
@@ -140,12 +140,12 @@ class SignUpDialog extends React.Component {
 
   render() {
     return (
-      <Dialog title="Mars Exploration Program"
-              message="How should we refer to you?">
+      <Dialog title="செவ்வாய் கிரக ஆய்வு திட்டம்"
+              message="நாங்கள் உங்களை எவ்வாறு குறிப்பிட வேண்டும்?">
         <input value={this.state.login}
                onChange={this.handleChange} />
         <button onClick={this.handleSignUp}>
-          Sign Me Up!
+          என்னை பதிவு செய்க!
         </button>
       </Dialog>
     );
@@ -161,12 +161,12 @@ class SignUpDialog extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## So What About Inheritance? {#so-what-about-inheritance}
+## எனவே மரபுரிமை என்பது என்ன? {#so-what-about-inheritance}
 
-At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+Facebook இல், ஆயிரக்கணக்கான கூறுகளை React'ல் பயன்படுத்துகிறோம், மற்றும் நாங்கள் மரபுரிமை முறையை கொண்டு கூறுகளை உருவாக்கும் எந்த பயன்பாட்டையும் கண்டதில்லை.
 
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+கூறுகளின் தோற்றம், நடத்தை'ஐ பண்பு மற்றும் கலவை முறையின் மூலமாக நீங்கள் உங்களுக்கு தேவையான தோற்றதை விளக்கமான மற்றும் பாதுகாப்பான வழியில் மாற்றி அமைக்கலாம். கூற்றுகளானது தன்னிச்சையான பண்பு, பழைய மதிப்புகள் உட்பட, React உறுப்புகள், அல்லது செயல்பாடுகளை ஏற்றுக்கொள்ளும் என்பதை நினைவில் வைத்துக்கொள்ளுங்கள்.
 
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.
+UI அல்லாது செயல்பாடுகளை கூறுகளுக்கு இடையில் மறுபடி உபயோகிக்க வேண்டும் என்றால்,நாங்கள் அவற்றை தனிப்பட்ட JavaScript தொகுதியாக பிரித்தெடுக்க பரிந்துரைக்கிறோம். இவ்வகை கூறுகளை நீட்டிக்காமல் அதை இறக்குமதி செய்து அவைற்றை செயல்பாடாக, பொருளாக, அல்லது ஒரு வகுப்பாக உபயோகிக்கலாம்.
