@@ -125,7 +125,7 @@ class EssayForm extends React.Component {
 
 கவனித்ததால் `this.state.value` கன்ஸ்ட்ரக்டரில் துவக்கப்பட்டுள்ளது, அதனால் text area உரைகளுடன் தொடங்குகிறது.
 
-## The select குறிச்சொல் {#the-select-tag}
+## select குறிச்சொல் {#the-select-tag}
 
 HTML இல், `<select>`ஒரு கீழ்தோன்றும் பட்டியல் உருவாக்குகிறது.உதாரணத்திற்கு, HTML சுவைகளின் பட்டியல் கீழே பட்டியலிடுகிறது:
 
