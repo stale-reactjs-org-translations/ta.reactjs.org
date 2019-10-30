@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: வடிவம்
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -9,7 +9,7 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+React இல் HTML படிவ உறுப்புகள் வேறு DOM உறுப்புகளில் இருந்து வேறுபடுகின்றன, ஏனெனில் படிவக் கூறுகள் இயற்கையாக சில உள் நிலைகளை வைத்திருக்கின்றன.உதாரணமாக, எளிய HTML இல் கீழ்கண்ட படிவம் ஒரு ஒற்றைப் பெயரை ஏற்றுக்கொள்கிறது:
 
 ```html
 <form>
@@ -21,15 +21,15 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+பயனர் இந்தப் படிவத்தை சமர்ப்பிக்கும் போது ஒரு புதிய பக்கத்திற்கு உலாவுதல் இயல்புநிலை HTML படிவத்தின் செயல்பாடு உள்ளது.இந்த செயல்பாட்டை நீங்கள் React இல் பிரதிபலிக்க விரும்பினால்,௮தை செய்யமுடியும்.ஆனால் பெரும்பாலான சந்தர்ப்பங்களில்,படிவத்தின் சமர்ப்பிப்பை கையாளுவது மற்றும் படிவத்தில் பயனர் தரவிற்கான அணுகல் ஆகியவற்றை JavaScript செயல்பாடு  மூலம் செய்வது வசதியாக இருக்கிறது.இதை அடைவதற்கான நிலையான நுட்ப வழி "கட்டுப்படுத்தப்பட்ட கூறுகள்" என்று அழைக்கப்படுகிறது.
 
-## Controlled Components {#controlled-components}
+## கட்டுப்படுத்தப்பட்ட கூறுகள் {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+HTML இல்,`<input>`, `<textarea>`, மற்றும் `<select>` போன்ற வடிவம் உறுப்புகள் பொதுவாக தங்கள் சொந்த நிலைகளை பராமரித்து பயனர் உள்ளீட்டை அடிப்படையாகப் புதுப்பிக்கின்றன.React இல் மாறக்கூடிய நிலைகளை பொதுவாக கூறுகளின் நிலை உடைமையாக கொண்டு , [`setState()`](/docs/react-component.html#setstate) மூலம் மட்டுமே புதுப்பிக்கின்றன.
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+React நிலையின் "உண்மை ஒற்றை ஆதாரமாக" கொண்டு இவை இறண்டையிம் ஒன்றிணைக்க முடியும்.பிறகு படிவத்தை அளிக்கும் React கூறுகள் அந்த படிவத்தில் அடுத்த பயனர் உள்ளீடில்  என்ன நடக்கிறது என்பதை கட்டுப்படுத்துகிறது.ஒரு உள்ளீட்டு படிவத்தின் உறுப்பு, இதன் மதிப்பு, React ஆல் கட்டுப்படுத்தப்படும் செயல்பாடு என்பதை "கட்டுப்படுத்தப்பட்ட கூறு" ஆகும்.
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+உதாரணத்திற்கு,நாம் முந்தைய முன்மாதிரியை ௪மர்பிக்கும் போது  பெயர் பதிவு செய்ய விரும்பிநால், அதை கட்டுப்படுத்தப்பட்ட கூறுகள் மூலம் எழுத முடியும்:
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -64,11 +64,11 @@ class NameForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
-Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+மதிப்பு பண்பு வடிவ உறுப்பில் பொருத்தப்பட்டிள்ளதால்,React நிலையின் "உண்மை ஒற்றை ஆதாரமாக" கொண்டு எப்போதும் காட்டப்படும் மதிப்பு `this.state.value` ஆகிறது.`handleChange` ஒவ்வொரு முறை அழுத்துவதன் மூலம் React நிலை புதுப்பிக்கிறது மற்றும் காட்டப்படும் மதிப்பு பயனர் வகைகளாக புதுப்பிக்கிறது.
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+கட்டுப்படுத்தப்பட்ட கூறுகள்,ஒவ்வொரு நிலையின் மாற்றத்திற்கும் தொடர்புடைய கையாளுதல் செயல்பாடு வேண்டும்.இது பயனர் உள்ளீடை நேரடியாக மாற்ற அல்லது சரிபார்க்க செய்கிறது.உதாரணத்திற்கு,பெயர்கள் அனைத்தும் பெரிய எழுத்துக்களுடன் எழுதப்பட்டிருக்க வேண்டும் எனில்,`handleChange` செயல்பாட்டை கீழ்கண்டவாறு எழுதவும்:
 
 ```javascript{2}
 handleChange(event) {
@@ -76,9 +76,9 @@ handleChange(event) {
 }
 ```
 
-## The textarea Tag {#the-textarea-tag}
+## textarea குறிச்சொல் {#the-textarea-tag}
 
-In HTML, a `<textarea>` element defines its text by its children:
+HTML இல் , <textarea> உறுப்பின் அதன் உரைகளை அதன் குழந்தைகள் வரையறுக்கிறது:
 
 ```html
 <textarea>
@@ -86,7 +86,7 @@ In HTML, a `<textarea>` element defines its text by its children:
 </textarea>
 ```
 
-In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
+React இல் ,  <textarea> `மதிப்பு` பண்பாக பயன்படுத்துகிறது,இந்த வழி ,ஒரு படிவத்தை பயன்படுத்தும் <textarea> ஒரு ஒற்றை வரி உள்ளீடு பயன்படுத்தும் ஒரு படிவதை இதேபோல் எழுத முடியும்:
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
@@ -123,11 +123,11 @@ class EssayForm extends React.Component {
 }
 ```
 
-Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+கவனித்ததால் `this.state.value` கன்ஸ்ட்ரக்டரில் துவக்கப்பட்டுள்ளது,அதனால் text area உரைகளுடன் தொடங்குகிறது.
 
-## The select Tag {#the-select-tag}
+## The select குறிச்சொல் {#the-select-tag}
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+HTML இல், `<select>`ஒரு கீழ்தோன்றும் பட்டியல் உருவாக்குகிறது.உதாரணத்திற்கு,HTML சுவைகளின் பட்டியல் கீழே பட்டியலிடுகிறது:
 
 ```html
 <select>
@@ -138,7 +138,7 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+இங்கே 'select` பண்புக்கூறு மூலம் தேங்காய் விருப்பத்தை ஆரம்பத்தில் தேர்ந்தெடுத்தது என்பதைக் கவனியுங்கள் React இல்,'select' டேக்'`selected` பண்பு பயன்படுத்துவதற்கு பதிலாக 'value' பண்பு பயன்படுத்த படுகிறது.கட்டுப்பாட்டு கூறுகளில் இது மிகவும் வசதியானது ஏனெனில் நீங்கள் அதை ஒரே இடத்தில் புதுப்பிக்க வேண்டும்.உதாரணத்திற்கு:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -178,33 +178,34 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+ஒட்டுமொத்தமாக,`<input type="text">`, `<textarea>`, மற்றும் `<select>` அனைத்தும் இதேபோல் வேலை செய்யும் - கட்டுப்பாட்டு கூறுகளை செயல்படுத்தும் `மதிப்பு` பண்பை ஏற்றுக்கொள்கிறார்கள்.
 
-> Note
+> குறிப்பு
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+> நீங்கள் பல விருப்பங்களை தேர்ந்தெடுக்க `மதிப்பு` பண்புக்கு ஒரு array அனுப்ப அனுமதிக்கிறது:
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## The file input Tag {#the-file-input-tag}
+## கோப்பு உள்ளீடு குறிச்சொல் {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTML இல், `<input type="file">` மூலம் பயனர் ஒன்று அல்லது அதற்கு மேற்பட்ட கோப்புகளை தேர்வு செய்ய தங்கள் சாதனத்தின் சேமிப்பகத்திலிருந்து சேவையகத்திற்கு பதிவேற்றப்படும் அல்லது  கையாள Javascript [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) பயன்படுத்தப்படும்.
 
 ```html
 <input type="file" />
 ```
 
-Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+React இல்,அதன் மதிப்பு வாசிக்க மட்டுமே-ஏனெனில், அது **கட்டுப்பாடற்ற** கூறு ஆகும்.இது மற்ற கட்டுப்பாடற்ற கூறுபாடுகளுடன் கலந்துரையாடப்பட்டது
+[பின்னர் ஆவணத்தில்](/docs/uncontrolled-components.html#the-file-input-tag).
 
-## Handling Multiple Inputs {#handling-multiple-inputs}
+## பல உள்ளீட்டைக் கையாளுதல் {#handling-multiple-inputs}
 
-When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
+நீங்கள் பல கட்டுப்படுத்தப்பட்ட `input` கூறுகளை கையாள வேண்டும் எனில்,நீங்கள் ஒவ்வொரு உறுப்புக்கும் `name` பண்புக்கூறு செய்து மற்றும் கையாளுதல் செயல்பாடு மதிப்பு அடிப்படையில் `event.target.name` மூலம் தேர்வு செய்யலாம்.
 
-For example:
+உதாரணத்திற்கு:
 
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
@@ -254,9 +255,9 @@ class Reservation extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
+[**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
+ES6 ஐ எப்படிப் பயன்படுத்துகிறோம் என்பதைக் கவனியுங்கள் [கணக்கிடப்பட்ட பண்பு பெயர்](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) கொடுக்கப்பட்ட உள்ளீட்டு பெயருடன் தொடர்புடைய நிலை விசையை மேம்படுத்த, தொடரியல்:
 
 ```js{2}
 this.setState({
@@ -264,7 +265,7 @@ this.setState({
 });
 ```
 
-It is equivalent to this ES5 code:
+இது ES5 குறியீட்டுக்கு சமமானது:
 
 ```js{2}
 var partialState = {};
@@ -272,13 +273,13 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
+மேலும், `setState ()` தானாகவே [பகுதி நிலையை தற்போதைய நிலையுடன் இணைக்கிறது](/docs/state-and-lifecycle.html#state-updates-are-merged), மாற்றியமைக்கப்பட்ட பகுதிகளுடன்  அதை அழைக்க வேண்டும்.
 
-## Controlled Input Null Value {#controlled-input-null-value}
+## கட்டுப்படுத்தப்பட்ட உள்ளீடு Null மதிப்பு {#controlled-input-null-value}
 
-Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+பண்புகள் மதிப்பை குறிப்பிடும்போது [கட்டுப்படுத்தப்பட்ட கூறுகள்](/docs/forms.html#controlled-components) நீங்கள் விரும்பும் வரை பயனர் உள்ளீட்டை மாற்றுவதைத் தடுக்கிறது. நீங்கள் `value` என்று குறிப்பிட்டிருந்தால், உள்ளீடு இன்னமும் திருத்தத்தக்கதாக இருந்தால் ,நீங்கள் தற்செயலாக `value`வை `undefined` அல்லது `null` என அமைத்திருக்கலாம்.
 
-The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
+பின்வரும் குறியீடு இதை நிரூபிக்கிறது. (உள்ளீடு முதலில் பூட்டப்பட்டுள்ளது, ஆனால் சிறிது தாமதத்திற்குப் பிறகு திருத்த முடியும்.)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
@@ -289,10 +290,10 @@ setTimeout(function() {
 
 ```
 
-## Alternatives to Controlled Components {#alternatives-to-controlled-components}
+## கட்டுப்படுத்தப்பட்ட கூறுகளுக்கு மாற்று {#alternatives-to-controlled-components}
 
-It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+சில நேரங்களில் கட்டுப்படுத்தப்பட்ட கூறுகளை பயன்படுத்த கடினமாக இருக்கும், ஏனெனில் React கூறு மூலம் அனைத்து வகை தரவு மாற்றம் மற்றும் உள்ளீடு நிலை மாற்றங்களுக்கு நிகழ்வு கையாளுதல் எழுத வேண்டும்.நீங்கள் ஒரு முன்னோடி குறியீட்டை React க்கு மாற்றும்போது அல்லது ஒரு React நூலகத்துடன் ஒரு non-React பயன்பாட்டை ஒருங்கிணைத்தலின் போது,  எரிச்சலூட்ட முடியும்.இந்த சூழ்நிலைகளில், நீங்கள் [கட்டுப்பாடற்ற கூறுகளை](/docs/uncontrolled-components.html), உள்ளீடு வடிவங்களை செயல்படுத்துவதற்கு ஒரு மாற்று நுட்பத்தை பயன்படுத்துங்கள்.
 
-## Fully-Fledged Solutions {#fully-fledged-solutions}
+## முழுமையாக ஏற்ற தீர்வுகள் {#fully-fledged-solutions}
 
-If you're looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, [Formik](https://jaredpalmer.com/formik) is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don't neglect to learn them.
+முழுமையாக ஏற்ற தீர்வுகள் சரிபார்ப்பு , விஜயமான துறைகள் கண்காணிக மற்றும் படிவத்தை சமர்ப்பித்தல் உள்ளிட்ட முழுமையான தீர்வை தேடுகிறீர்கள் என்றால், [Formik](https://jaredpalmer.com/formik) பிரபலமான தேர்வுகளில் ஒன்றாகும்.இருப்பினும், இது கட்டுப்படுத்தப்பட்ட கூறுகளின் மற்றும் மாநில நிர்வகித்தல்  கொள்கைகளால் கட்டப்பட்டுள்ளது- எனவே அவற்றை கற்று புறக்கணிக்க வேண்டாம்.
