@@ -56,7 +56,11 @@ function ActionLink() {
 
 இங்கே, `e` ஒரு செயற்கை நிகழ்வு. React இந்த செயற்கை நிகழ்வுகளை [W3C விவரம் ](https://www.w3.org/TR/DOM-Level-3-Events/) விவரக்குறிப்பின் படி வரையறுக்கிறது, எனவே குறுக்கு-உலாவி பொருந்தக்கூடிய தன்மையைப் பற்றி நீங்கள் கவலைப்பட தேவையில்லை. மேலும் அறிய, [`செயற்கைநிகழ்வு`](/docs/events.html) குறிப்பு வழிகாட்டியைப் பார்க்கவும்.
 
+<<<<<<< HEAD
 React-ஐ பயன்படுத்தும் போது, ​​பொதுவாக ஒரு DOM கூறு உருவாக்கப்பட்ட பிறகு கவனிப்பவர்களைச் சேர்க்க `addEventListener`-ஐ அழைக்க தேவையில்லை. அதற்கு பதிலாக, கூறு ஆரம்பத்தில் காண்பிக்கப்படும் போது கவனிப்பவருக்கு வழங்கவும்.
+=======
+When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+>>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 [ES6 வகுப்பைப் ](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) பயன்படுத்தி ஒரு கூறுகளை நீங்கள் வரையறுக்கும்போது, ஒரு பொதுவான மாதிரி நிகழ்வு கையாளுபவர் வகுப்பில் ஒரு முறையாக இருப்பது. உதாரணத்திற்கு, இந்த `Toggle` கூறு ஒரு பொத்தானை அளிக்கிறது, இது பயனரை "ஆன்" மற்றும் "ஆஃப்" இடையே மாற்ற அனுமதிக்கிறது: 
 
@@ -142,7 +146,11 @@ class LoggingButton extends React.Component {
 
 ## நிகழ்வு கையாளுவதற்கு வாதங்களை அனுப்புதல் {#passing-arguments-to-event-handlers}
 
+<<<<<<< HEAD
 ஒரு சுழற்சியின் உள்ளே ஒரு நிகழ்வு அளவுருவுக்கு கூடுதல் அளவுருவை அனுப்ப விரும்புவது பொதுவானது. உதாரணத்திற்கு, வரிசை ID `id` என்றால், பின்வருவனவற்றில் ஒன்று செயல்படும்:
+=======
+Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+>>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
