@@ -9,7 +9,7 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+பெரும்பாலும், பல component ஒரே மாற்றம் கொண்ட தகவல்களை பிரதிபலிக்க வேண்டும். நாங்கள் பகிரப்பட்ட நிலையை அவர்களின் நெருங்கிய பொதுவான மூதாதையருக்கு உயர்த்த பரிந்துரைக்கிறோம். வாருங்கள் அது எப்படி செயல்படுகிறது என்று பார்க்கலாம்.
 
 In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.
 
