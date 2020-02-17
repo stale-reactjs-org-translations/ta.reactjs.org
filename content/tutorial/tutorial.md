@@ -37,7 +37,11 @@ This tutorial doesn't assume any existing React knowledge.
 
 இந்த டுடோரியலில், react உடன் ஒரு interactive டிக்-டாக்-டோ (Tic-Tac-Toe) விளையாட்டை எவ்வாறு உருவாக்குவது என்பதைக் காண்பிப்போம்.
 
+<<<<<<< HEAD
 நாங்கள் இங்கே என்ன கட்டமைக்கிறோம் என்பதை நீங்கள் காணலாம்: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Code உங்களுக்கு புரியவில்லை என்றால், அல்லது code தொடரியல் உங்களுக்கு அறிமுகமில்லாவிட்டால், கவலைப்பட வேண்டாம்! இந்த டுடோரியலின் குறிக்கோள், எதிர்வினை மற்றும் அதன் தொடரியல் ஆகியவற்றைப் புரிந்துகொள்ள உங்களுக்கு உதவுவதாகும்.
+=======
+We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+>>>>>>> 5af5fba65a7e9570a4d00c85d8a17b6cdc166bb6
 
 டுடோரியலைத் தொடர்வதற்கு முன் டிக்-டாக்-டோ விளையாட்டைப் பார்க்க பரிந்துரைக்கிறோம். நீங்கள் கவனிக்க வேண்டிய அம்சங்களில் ஒன்று, விளையாட்டின் குழுவின் வலதுபுறத்தில் எண்ணிடப்பட்ட பட்டியல் உள்ளது. இந்த பட்டியல் விளையாட்டில் நிகழ்ந்த அனைத்து நகர்வுகளின் வரலாற்றையும் உங்களுக்கு வழங்குகிறது, மேலும் விளையாட்டு முன்னேறும்போது புதுப்பிக்கப்படும்.
 
