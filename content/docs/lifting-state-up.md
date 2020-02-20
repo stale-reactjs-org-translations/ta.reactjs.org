@@ -9,11 +9,11 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+பெரும்பாலும், பல component'கள் ஒரே மாற்றம் கொண்ட தகவல்களை பிரதிபலிக்க வேண்டும். நாங்கள் பகிரப்பட்ட நிலையை அவர்களின் நெருங்கிய பொதுவான மூதாதையருக்கு உயர்த்த பரிந்துரைக்கிறோம். வாருங்கள் அது எப்படி செயல்படுகிறது என்று பார்க்கலாம்.
 
-In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.
+இந்த பிரிவில், ஒரு குறிப்பிட்ட வெப்பநிலையில் தண்ணீர் கொதிக்குமா என்பதைக் கணக்கிடும் வெப்பநிலை கால்குலேட்டரை உருவாக்குவோம்.
 
-We will start with a component called `BoilingVerdict`. It accepts the `celsius` temperature as a prop, and prints whether it is enough to boil the water:
+`BoilingVerdict` எனப்படும் ஒரு component தொடங்குவோம். இது `celsius` வெப்பநிலையை ஒரு props ஆக ஏற்றுக்கொள்கிறது, மேலும் தண்ணீரை கொதிக்க இது போதுமானதா என்பதை அச்சிடுகிறது:
 
 ```js{3,5}
 function BoilingVerdict(props) {
@@ -24,9 +24,9 @@ function BoilingVerdict(props) {
 }
 ```
 
-Next, we will create a component called `Calculator`. It renders an `<input>` that lets you enter the temperature, and keeps its value in `this.state.temperature`.
+அடுத்து, `Calculator` எனப்படும் ஒரு component'ஐ உருவாக்குவோம். இது வெப்பநிலையை உள்ளிட அனுமதிக்கும் `<input>` ஐ வழங்குகிறது, மேலும் அதன் மதிப்பை `this.state.temperature` இல் வைக்கும்.
 
-Additionally, it renders the `BoilingVerdict` for the current input value.
+கூடுதலாக, இது தற்போதைய உள்ளீட்டு மதிப்புக்கு `BoilingVerdict` ரீ ரெண்டெர் செய்கிறது.
 
 ```js{5,9,13,17-21}
 class Calculator extends React.Component {
@@ -56,11 +56,11 @@ class Calculator extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOBm?editors=0010)
+[**CodePen இல் அதை முயற்சிக்கவும்**](https://codepen.io/gaearon/pen/ZXeOBm?editors=0010)
 
-## Adding a Second Input {#adding-a-second-input}
+## இன்னொரு Input சேர்த்தல்  {#adding-a-second-input}
 
-Our new requirement is that, in addition to a Celsius input, we provide a Fahrenheit input, and they are kept in sync.
+நம் புதிய தேவை என்னவென்றால், செல்சியஸ் உள்ளீட்டைத் தவிர, நாங்கள் ஒரு பாரன்ஹீட் உள்ளீட்டை வழங்குகிறோம், அவை ஒத்திசைவில் வைக்கப்படுகின்றன.
 
 We can start by extracting a `TemperatureInput` component from `Calculator`. We will add a new `scale` prop to it that can either be `"c"` or `"f"`:
 
@@ -110,7 +110,7 @@ class Calculator extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
+[**CodePen இல் அதை முயற்சிக்கவும்**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
 
 We have two inputs now, but when you enter the temperature in one of them, the other doesn't update. This contradicts our requirement: we want to keep them in sync.
 
@@ -299,7 +299,7 @@ class Calculator extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/WZpxpz?editors=0010)
+[**CodePen இல் அதை முயற்சிக்கவும்**](https://codepen.io/gaearon/pen/WZpxpz?editors=0010)
 
 Now, no matter which input you edit, `this.state.temperature` and `this.state.scale` in the `Calculator` get updated. One of the inputs gets the value as is, so any user input is preserved, and the other input value is always recalculated based on it.
 
