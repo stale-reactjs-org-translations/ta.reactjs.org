@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "பயிற்சி: React இக்கான ஓர் அறிமுகம்."
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,7 +12,7 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+இப் பயிற்சிக்கு எவ்விதமான React முன் அனுபவமும் அவசியமல்ல.
 
 ## பயிற்சியை ஆரம்பிப்பதற்கு முன்னர்  {#before-we-start-the-tutorial}
 
@@ -32,10 +32,9 @@ This tutorial doesn't assume any existing React knowledge.
 
 இந்த டுடோரியலில் இருந்து மதிப்பைப் பெற நீங்கள் அனைத்து பிரிவுகளையும் ஒரே நேரத்தில் முடிக்க வேண்டியதில்லை. ஒன்று அல்லது இரண்டு பிரிவுகளாக இருந்தாலும் கூட - உங்களால் முடிந்தவரை பெற முயற்சிக்கவும்.
 
-### What Are We Building? {#what-are-we-building}
+### நாங்கள் எதை உருவாக்க போக்கின்றோம்? {#what-are-we-building}
 
-
-இந்த டுடோரியலில், react உடன் ஒரு interactive டிக்-டாக்-டோ (Tic-Tac-Toe) விளையாட்டை எவ்வாறு உருவாக்குவது என்பதைக் காண்பிப்போம்.
+இந்த டுடோரியலில், React உடன் ஒரு interactive டிக்-டாக்-டோ (Tic-Tac-Toe) விளையாட்டை எவ்வாறு உருவாக்குவது என்பதைக் காண்பிப்போம்.
 
 நாங்கள் இங்கே என்ன கட்டமைக்கிறோம் என்பதை நீங்கள் காணலாம்: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Code உங்களுக்கு புரியவில்லை என்றால், அல்லது code தொடரியல் உங்களுக்கு அறிமுகமில்லாவிட்டால், கவலைப்பட வேண்டாம்! இந்த டுடோரியலின் குறிக்கோள், எதிர்வினை மற்றும் அதன் தொடரியல் ஆகியவற்றைப் புரிந்துகொள்ள உங்களுக்கு உதவுவதாகும்.
 
