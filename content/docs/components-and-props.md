@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 மேலே கூறிய இரு கூறுகளும்  Reactயின் பார்வையில் சமமானவையே.
 
+<<<<<<< HEAD
 வகுப்புகள்[Classes] சில கூடுதல் அம்சங்களைக் கொண்டிருக்கின்றன, அவை [அடுத்த பிரிவுகளில்](/docs/state-and-lifecycle.html) விவாதிக்கப்படும். அதுவரை, நாம் சுருக்கமான தகவல்களை கொண்ட செயல்பாட்டு கூறுகளை பயன்படுத்துவோம்.
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> fa5e6e7a988b4cb465601e4c3beece321edeb812
 
 ## கூறு வரைதல் {#rendering-a-component}
 
@@ -60,7 +64,11 @@ const element = <div />;
 const element = <Welcome name="சாரா" />;
 ```
 
+<<<<<<< HEAD
 React இந்த வகை பயனர் வரையறுக்கப்பட்ட கூறு குறிக்கும் உறுப்பை பார்க்கும் பொழுது, அந்த கூறுக்கு JSX பண்புகளை ஒற்றை பொருளாக கொடுக்கின்றது. நாம் இந்த பண்புகளை "props" என்று அழைக்கின்றோம்.
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> fa5e6e7a988b4cb465601e4c3beece321edeb812
 
 உதாரணமாக, இந்த குறியீடு "வணக்கம், சாரா" என்று பக்கத்தில் வரையும்:
 
