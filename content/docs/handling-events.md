@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React கூறுகளுடன் நிகழ்வுகளைக் கையாளுதல் DOM கூறுகளுடன் நிகழ்வுகளைக் கையாளுவதற்கு மிகவும் ஒத்திருக்கிறது. சில தொடரியல் வேறுபாடுகள் உள்ளன:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 * சிறிய எழுத்துக்களைக் காட்டிலும், ஒட்டக வடிவ எழுத்துக்களைக் பயன்படுத்தி React நிகழ்வுகள் பெயரிடப்பட்டுள்ளன.
 * JSX உடன் நீங்கள் ஒரு செயக்கூற்றை விட, செயற்பாடு கையாளுபவராக ஒரு செயல்பாட்டை அனுப்புகிறீர்கள், சொல்லுக்கு மாறாக.
@@ -130,7 +134,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
