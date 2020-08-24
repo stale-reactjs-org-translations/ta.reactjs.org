@@ -1,6 +1,8 @@
 ---
 id: refs-and-the-dom
 title: Refs and the DOM
+prev: static-type-checking.html
+next: uncontrolled-components.html
 redirect_from:
   - "docs/working-with-the-browser.html"
   - "docs/more-about-refs.html"
@@ -168,8 +170,8 @@ You can, however, **use the `ref` attribute inside a function component** as lon
 ```javascript{2,3,6,13}
 function CustomTextInput(props) {
   // textInput must be declared here so the ref can refer to it
-  let textInput = React.createRef();
-
+  const textInput = useRef(null);
+  
   function handleClick() {
     textInput.current.focus();
   }

@@ -2,6 +2,7 @@
 id: jsx-in-depth
 title: JSX In Depth
 permalink: docs/jsx-in-depth.html
+next: typechecking-with-proptypes.html
 redirect_from:
   - "docs/jsx-spread.html"
   - "docs/jsx-gotchas.html"
@@ -42,8 +43,7 @@ compiles into:
 ```js
 React.createElement(
   'div',
-  {className: 'sidebar'},
-  null
+  {className: 'sidebar'}
 )
 ```
 
@@ -228,7 +228,7 @@ If you pass no value for a prop, it defaults to `true`. These two JSX expression
 <MyTextBox autocomplete={true} />
 ```
 
-In general, we don't recommend using this because it can be confused with the [ES6 object shorthand](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015) `{foo}` which is short for `{foo: foo}` rather than `{foo: true}`. This behavior is just there so that it matches the behavior of HTML.
+In general, we don't recommend *not* passing a value for a prop, because it can be confused with the [ES6 object shorthand](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015) `{foo}` which is short for `{foo: foo}` rather than `{foo: true}`. This behavior is just there so that it matches the behavior of HTML.
 
 ### Spread Attributes {#spread-attributes}
 
