@@ -2,6 +2,8 @@
 id: render-props
 title: Render Props
 permalink: docs/render-props.html
+prev: higher-order-components.html
+next: integrating-with-other-libraries.html
 ---
 
 The term ["render prop"](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) refers to a technique for sharing code between React components using a prop whose value is a function.
@@ -41,7 +43,7 @@ class MouseTracker extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
         <h1>Move the mouse around!</h1>
         <p>The current mouse position is ({this.state.x}, {this.state.y})</p>
       </div>
@@ -74,7 +76,7 @@ class Mouse extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
 
         {/* ...but how do we render something other than a <p>? */}
         <p>The current mouse position is ({this.state.x}, {this.state.y})</p>
@@ -86,10 +88,10 @@ class Mouse extends React.Component {
 class MouseTracker extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <h1>Move the mouse around!</h1>
         <Mouse />
-      </div>
+      </>
     );
   }
 }
@@ -127,7 +129,7 @@ class MouseWithCat extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
 
         {/*
           We could just swap out the <p> for a <Cat> here ... but then
@@ -183,7 +185,7 @@ class Mouse extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
 
         {/*
           Instead of providing a static representation of what <Mouse> renders,
