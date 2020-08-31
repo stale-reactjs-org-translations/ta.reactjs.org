@@ -253,7 +253,7 @@ export default function Map(props) {
 import React from "react";
 import Map from "./map";
 
-function Contact(props) {
+export default function Contact(props) {
   return (
     <div>
       <address>
@@ -463,6 +463,8 @@ We can write tests for this component by leveraging [Jest's timer mocks](https:/
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
+
+import Card from "./card";
 
 jest.useFakeTimers();
 
