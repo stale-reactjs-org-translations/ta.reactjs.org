@@ -68,6 +68,7 @@ class NameForm extends React.Component {
 
 மதிப்பு பண்பு வடிவ உறுப்பில் பொருத்தப்பட்டிள்ளதால், React நிலையின் "உண்மை ஒற்றை ஆதாரமாக" கொண்டு எப்போதும் காட்டப்படும் மதிப்பு `this.state.value` ஆகிறது. `handleChange` ஒவ்வொரு முறை அழுத்துவதன் மூலம் React நிலை புதுப்பிக்கிறது மற்றும் காட்டப்படும் மதிப்பு பயனர் வகைகளாக புதுப்பிக்கிறது.
 
+<<<<<<< HEAD
 கட்டுப்படுத்தப்பட்ட கூறுகள், ஒவ்வொரு நிலையின் மாற்றத்திற்கும் தொடர்புடைய கையாளுதல் செயல்பாடு வேண்டும். இது பயனர் உள்ளீடை நேரடியாக மாற்ற அல்லது சரிபார்க்க செய்கிறது. உதாரணத்திற்கு, பெயர்கள் அனைத்தும் பெரிய எழுத்துக்களுடன் எழுதப்பட்டிருக்க வேண்டும் எனில், `handleChange` செயல்பாட்டை கீழ்கண்டவாறு எழுதவும்:
 
 ```javascript{2}
@@ -75,6 +76,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> 657658aa1f19c65e35055ddca4452c98d569552f
 
 ## textarea குறிச்சொல் {#the-textarea-tag}
 
