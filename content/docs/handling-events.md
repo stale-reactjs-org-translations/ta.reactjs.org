@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React கூறுகளுடன் நிகழ்வுகளைக் கையாளுதல் DOM கூறுகளுடன் நிகழ்வுகளைக் கையாளுவதற்கு மிகவும் ஒத்திருக்கிறது. சில தொடரியல் வேறுபாடுகள் உள்ளன:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
 
 * சிறிய எழுத்துக்களைக் காட்டிலும், ஒட்டக வடிவ எழுத்துக்களைக் பயன்படுத்தி React நிகழ்வுகள் பெயரிடப்பட்டுள்ளன.
 * JSX உடன் நீங்கள் ஒரு செயக்கூற்றை விட, செயற்பாடு கையாளுபவராக ஒரு செயல்பாட்டை அனுப்புகிறீர்கள், சொல்லுக்கு மாறாக.
@@ -54,7 +58,11 @@ function ActionLink() {
 }
 ```
 
+<<<<<<< HEAD
 இங்கே, `e` ஒரு செயற்கை நிகழ்வு. React இந்த செயற்கை நிகழ்வுகளை [W3C விவரம் ](https://www.w3.org/TR/DOM-Level-3-Events/) விவரக்குறிப்பின் படி வரையறுக்கிறது, எனவே குறுக்கு-உலாவி பொருந்தக்கூடிய தன்மையைப் பற்றி நீங்கள் கவலைப்பட தேவையில்லை. மேலும் அறிய, [`செயற்கைநிகழ்வு`](/docs/events.html) குறிப்பு வழிகாட்டியைப் பார்க்கவும்.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
 
 React-ஐ பயன்படுத்தும் போது, ​​பொதுவாக ஒரு DOM கூறு உருவாக்கப்பட்ட பிறகு கவனிப்பவர்களைச் சேர்க்க `addEventListener`-ஐ அழைக்க தேவையில்லை. அதற்கு பதிலாக, கூறு ஆரம்பத்தில் காண்பிக்கப்படும் போது கவனிப்பவருக்கு வழங்கவும்.
 
@@ -130,7 +138,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );

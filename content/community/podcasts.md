@@ -18,7 +18,13 @@ Reactக்கு அர்ப்பணிக்கப்பட்ட பாட�
 
 - [React Native Radio](https://devchat.tv/react-native-radio)
 
+<<<<<<< HEAD
 ## அத்தியாயங்கள் {#episodes}
+=======
+- [React Wednesdays](https://www.telerik.com/react-wednesdays) - Weekly live streams with the best and brightest in the React world
+
+## Episodes {#episodes}
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
 
 - [CodeWinds Episode 4](https://codewinds.com/podcast/004.html) - பீட் ஹன்ட் ஜெஃப் பார்க்ஸ்யூஸ்கியுடன் React பற்றி பேசுகிறார்.
 
