@@ -419,12 +419,15 @@ this.setState(function(state, props) {
 ஒரு கூறு தனது நிலை-ஐ தனது குழந்தைகளுக்கு அனுப்பலாம்.
 
 ```js
+<<<<<<< HEAD
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
 இது பயனர்-வரையறுத்த கூறுகளுக்கும் பொருந்தும்.
 
 ```js
+=======
+>>>>>>> 4fc709d0576d0f0f1f8ea8b6bb341a12944b5510
 <FormattedDate date={this.state.date} />
 ```
 
