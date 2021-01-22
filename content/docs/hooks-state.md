@@ -1,38 +1,38 @@
 ---
 id: hooks-state
-title: Using the State Hook
+title: நிலை Hook_ஐ பயன்படுத்துதல்
 permalink: docs/hooks-state.html
 next: hooks-effect.html
 prev: hooks-overview.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* என்பவை React 16.8 இன் புதிய இணைப்பு. இவை உங்களுக்கு நிலை மற்றும் இதர React அம்சங்களை, வகுப்புகளை(class) எழுதாமலே பயன்படுத்த அனுமதிக்கும். 
 
-The [introduction page](/docs/hooks-intro.html) used this example to get familiar with Hooks:
+[அறிமுக பக்கம்](/docs/hooks-intro.html) Hooks_ஐ பழகுவதற்கு இந்த எடுத்துக்காட்டை பயன்படுத்தியுள்ளது:
 
 ```js{4-5}
 import React, { useState } from 'react';
 
 function Example() {
-  // Declare a new state variable, which we'll call "count"
+  // புதிய நிலை மாறியை அறிவித்து, அதை "count" என அழைப்போம்
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>நீங்கள் {count} முறை சொடுக்கியுள்ளீர்கள்</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        என்னை சொடுக்கு
       </button>
     </div>
   );
 }
 ```
 
-We'll start learning about Hooks by comparing this code to an equivalent class example.
+நாம் இந்த நிரலையும், அதற்கு இணையான வகுப்பு(class) எடுத்துக்காட்டையும் வேறுபடுத்தி காண்பதன் மூலம் Hooks_ஐ பற்றி அறிய தொடங்குவோம்.
 
-## Equivalent Class Example {#equivalent-class-example}
+## இணையான வகுப்பு(class) எடுத்துக்காட்டு {#equivalent-class-example}
 
-If you used classes in React before, this code should look familiar:
+நீங்கள் இதற்கு முன்பு React_ல் வகுப்புகளை(classes) பயன்படுத்தியிருந்தால், இந்த நிரல் தெரிந்திருக்கும்:
 
 ```js
 class Example extends React.Component {
@@ -46,9 +46,9 @@ class Example extends React.Component {
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>நீங்கள் {this.state.count} முறை சொடுக்கியுள்ளீர்கள்</p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Click me
+          என்னை சொடுக்கு
         </button>
       </div>
     );
@@ -56,39 +56,39 @@ class Example extends React.Component {
 }
 ```
 
-The state starts as `{ count: 0 }`, and we increment `state.count` when the user clicks a button by calling `this.setState()`. We'll use snippets from this class throughout the page.
+`{ count: 0 }` என நிலை(state) தொடங்குகிறது மற்றும் பயனர் பொத்தானை சொடுக்கும்போது `this.setState()`_ஐ அழைப்பதன் மூலம் நாம் `state.count`_ஐ அதிகரிப்போம். இந்த வகுப்பில்(class) உள்ள நிரல் துணுக்குகளை நாம் இந்த பக்கம் முழுவதும் பயன்படுத்துவோம்.
 
->Note
+>குறிப்பு
 >
->You might be wondering why we're using a counter here instead of a more realistic example. This is to help us focus on the API while we're still making our first steps with Hooks.
+>நாங்கள் ஏன் இங்கு யதார்த்தமான எடுத்துக்காட்டுக்கு பதிலாக எண்ணிக்கையை பயன்படுத்துகிறோம் என நீங்கள் யோசிக்கலாம். நாம் இன்னும் Hooks_ன் முதல் படிநிலையில் இருப்பதால் இது நமக்கு API_ன் மேல் கவனம் செலுத்த உதவும்.
 
-## Hooks and Function Components {#hooks-and-function-components}
+## Hooks மற்றும் செயல்பாட்டு கூறுகள்(function components) {#hooks-and-function-components}
 
-As a reminder, function components in React look like this:
+ஒரு நினைவூட்டலாக, React_ல் செயல்பாட்டு கூறுகள் பின்வருமாறு இருக்கும்:
 
 ```js
 const Example = (props) => {
-  // You can use Hooks here!
+  // நீங்கள் இங்கு Hooks_ஐ பயன்படுத்தலாம்!
   return <div />;
 }
 ```
 
-or this:
+அல்லது இது:
 
 ```js
 function Example(props) {
-  // You can use Hooks here!
+  // நீங்கள் இங்கு Hooks_ஐ பயன்படுத்தலாம்!
   return <div />;
 }
 ```
 
-You might have previously known these as "stateless components". We're now introducing the ability to use React state from these, so we prefer the name "function components".
+நீங்கள் முன்பு இவற்றை "நிலையற்ற கூறுகள்"(stateless components) என அறிந்திருக்கலாம். இவற்றிலிருந்து React நிலையை பயன்படுத்துவதற்கான திறனை நாங்கள் அறிமுகபடுத்துகிறோம், அதனால் நாங்கள் "செயல்பாட்டு கூறுகள்" என்ற பெயரை தேர்ந்தெடுக்கிறோம்.
 
-Hooks **don't** work inside classes. But you can use them instead of writing classes.
+Hooks வகுப்புகளுக்கு(classes) உள்ளே வேலை **செய்யாது**. ஆனால் இவற்றை நீங்கள் வகுப்புகளை எழுதுவதற்கு பதிலாக பயன்படுத்தலாம்.
 
-## What's a Hook? {#whats-a-hook}
+## Hook என்பது என்ன? {#whats-a-hook}
 
-Our new example starts by importing the `useState` Hook from React:
+நமது புதிய எடுத்துக்காட்டு `useState` Hookஐ Reactலிருந்து இறக்குமதி செய்வதன் மூலம் தொடங்குகிறது:
 
 ```js{1}
 import React, { useState } from 'react';
@@ -98,17 +98,17 @@ function Example() {
 }
 ```
 
-**What is a Hook?** A Hook is a special function that lets you "hook into" React features. For example, `useState` is a Hook that lets you add React state to function components. We'll learn other Hooks later.
+**Hook என்பது என்ன?** Hook என்பது சிறப்பு செயல்பாடு, இது தங்களை React அம்சங்களுடன் "இணைக்கின்றது". எடுத்துக்காட்டாக `useState` என்பது ஒரு Hook, இது உங்களுக்கு React நிலையை செயல்பாட்டுக் கூறுகளில் சேர்க்க உதவுகிறது. இதர Hooks பற்றி பிறகு தெரிந்து கொள்வோம்.
 
-**When would I use a Hook?** If you write a function component and realize you need to add some state to it, previously you had to convert it to a class. Now you can use a Hook inside the existing function component. We're going to do that right now!
+**நான் எப்போது Hookஐ பயன்படுத்தலாம்?** நீங்கள் ஏதேனும் ஒரு செயல்பாட்டுக் கூறு எழுதும் போது அதற்கு சில நிலை சேர்ப்பது தேவை என உணரலாம், முன்பு அவற்றை வகுப்புகளாக மாற்றியிருப்பீர்கள். தற்போது முன்பே இருக்கும் செயல்பாட்டுக் கூறின் உள்ளே நீங்கள் Hookஐ பயன்படுத்தலாம். நாம் அதை இப்போதே செய்ய போகிறோம்!
 
->Note:
+>குறிப்பு:
 >
->There are some special rules about where you can and can't use Hooks within a component. We'll learn them in [Rules of Hooks](/docs/hooks-rules.html).
+>கூறின் உள்ளே நீங்கள் எங்கு Hooksஐ பயன்படுத்த முடியும் மற்றும் முடியாது என்பதற்கான சில சிறப்பு விதிமுறைகள் உள்ளது. நாம் அதை [Hooksன் விதிமுறைகள்](/docs/hooks-rules.html) பகுதியில் தெரிந்து கொள்வோம்.
 
-## Declaring a State Variable {#declaring-a-state-variable}
+## நிலை மாறியை அறிவித்தல் {#declaring-a-state-variable}
 
-In a class, we initialize the `count` state to `0` by setting `this.state` to `{ count: 0 }` in the constructor:
+ஒரு வகுப்பில், constructor உள்ளே `this.state`ஐ `{ count: 0 }` என அமைப்பதன் மூலம் `count` என்ற நிலைக்கு `0` என்ற தொடக்க மதிப்பளிக்கிறோம்:
 
 ```js{4-6}
 class Example extends React.Component {
@@ -120,17 +120,17 @@ class Example extends React.Component {
   }
 ```
 
-In a function component, we have no `this`, so we can't assign or read `this.state`. Instead, we call the `useState` Hook directly inside our component:
+ஒரு செயல்பாட்டு கூறில், நமக்கு `this` என்பது இல்லை, அதனால் `this.state`க்கு மதிப்பு வழங்கனவோ, பயன்படுத்தவோ முடியாது. எனவே, இதற்கு பதிலாக `useState` Hookஐ நேரடியாக நமது கூறின் உள்ளே அழைக்கலாம்:
 
 ```js{4,5}
 import React, { useState } from 'react';
 
 function Example() {
-  // Declare a new state variable, which we'll call "count"
+  // புதிய நிலை மாறியை அறிவித்து, அதை "count" என அழைப்போம்
   const [count, setCount] = useState(0);
 ```
 
-**What does calling `useState` do?** It declares a "state variable". Our variable is called `count` but we could call it anything else, like `banana`. This is a way to "preserve" some values between the function calls — `useState` is a new way to use the exact same capabilities that `this.state` provides in a class. Normally, variables "disappear" when the function exits but state variables are preserved by React.
+**`useState`ஐ அழைக்கும் போது என்ன செய்கிறது?** இது ஒரு "நிலை மாறியை" அறிவிக்கிறது. நமது மாறியை `count` என அழைக்கிறோம் ஆனால் நாம் இவற்றை `banana` போன்ற வேறு எந்த பெயர்களிலும் அழைக்கலாம். இது செயல்பாட்டு அழைப்புகளுக்கிடையே சில மதிப்பகளை பாதுகாக்கும் வழியாகும் - `useState` என்பது, ஒரு வகுப்பில் `this.state` வழங்கும் அதே திறன்களை பயன்படுத்துவதற்கான புதிய வழியாகும். பொதுவாக, செயல்பாடு வெளியேற்றப்படும் போது மாறிகள் "மறைந்துவிடும்" ஆனால் நிலை மாறிகள் React_ஆல் பாதுகாக்கப்படுகிறது.
 
 **What do we pass to `useState` as an argument?** The only argument to the `useState()` Hook is the initial state. Unlike with classes, the state doesn't have to be an object. We can keep a number or a string if that's all we need. In our example, we just want a number for how many times the user clicked, so pass `0` as initial state for our variable. (If we wanted to store two different values in state, we would call `useState()` twice.)
 
@@ -183,7 +183,7 @@ In a function, we already have `setCount` and `count` as variables so we don't n
 
 ```js{1}
   <button onClick={() => setCount(count + 1)}>
-    Click me
+    என்னை சொடுக்கு
   </button>
 ```
 
