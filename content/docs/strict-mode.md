@@ -97,12 +97,13 @@ Render phase lifecycles include the following class component methods:
 
 Because the above methods might be called more than once, it's important that they do not contain side-effects. Ignoring this rule can lead to a variety of problems, including memory leaks and invalid application state. Unfortunately, it can be difficult to detect these problems as they can often be [non-deterministic](https://en.wikipedia.org/wiki/Deterministic_algorithm).
 
-Strict mode can't automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. This is done by intentionally double-invoking the following methods:
+Strict mode can't automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. This is done by intentionally double-invoking the following functions:
 
-* Class component `constructor` method
-* The `render` method
-* `setState` updater functions (the first argument)
-* The static `getDerivedStateFromProps` lifecycle
+* Class component `constructor`, `render`, and `shouldComponentUpdate` methods
+* Class component static `getDerivedStateFromProps` method
+* Function component bodies
+* State updater functions (the first argument to `setState`)
+* Functions passed to `useState`, `useMemo`, or `useReducer`
 
 > Note:
 >
@@ -114,6 +115,10 @@ For example, consider the following code:
 At first glance, this code might not seem problematic. But if `SharedApplicationState.recordEvent` is not [idempotent](https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning), then instantiating this component multiple times could lead to invalid application state. This sort of subtle bug might not manifest during development, or it might do so inconsistently and so be overlooked.
 
 By intentionally double-invoking methods like the component constructor, strict mode makes patterns like this easier to spot.
+
+> Note:
+>
+> Starting with React 17, React automatically modifies the console methods like `console.log()` to silence the logs in the second call to lifecycle functions. However, it may cause undesired behavior in certain cases where [a workaround can be used](https://github.com/facebook/react/issues/20090#issuecomment-715927125).
 
 ### Detecting legacy context API {#detecting-legacy-context-api}
 
