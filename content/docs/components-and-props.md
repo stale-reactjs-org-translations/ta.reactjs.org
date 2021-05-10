@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 மேலே கூறிய இரு கூறுகளும்  Reactயின் பார்வையில் சமமானவையே.
 
+<<<<<<< HEAD
 வகுப்புகள்[Classes] சில கூடுதல் அம்சங்களைக் கொண்டிருக்கின்றன, அவை [அடுத்த பிரிவுகளில்](/docs/state-and-lifecycle.html) விவாதிக்கப்படும். அதுவரை, நாம் சுருக்கமான தகவல்களை கொண்ட செயல்பாட்டு கூறுகளை பயன்படுத்துவோம்.
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> 16158f195a86fc2dbb59b3ea5a5c32ce161dccb9
 
 ## கூறு வரைதல் {#rendering-a-component}
 
@@ -60,7 +64,11 @@ const element = <div />;
 const element = <Welcome name="சாரா" />;
 ```
 
+<<<<<<< HEAD
 React இந்த வகை பயனர் வரையறுக்கப்பட்ட கூறு குறிக்கும் உறுப்பை பார்க்கும் பொழுது, அந்த கூறுக்கு JSX பண்புகளை ஒற்றை பொருளாக கொடுக்கின்றது. நாம் இந்த பண்புகளை "props" என்று அழைக்கின்றோம்.
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> 16158f195a86fc2dbb59b3ea5a5c32ce161dccb9
 
 உதாரணமாக, இந்த குறியீடு "வணக்கம், சாரா" என்று பக்கத்தில் வரையும்:
 
@@ -233,7 +241,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
+<<<<<<< HEAD
 கூறுகளை பிரித்தல் முதலில் கடினமான வேலை போல தோன்றலாம், ஆனால் மறுபயன்பாட்டுக்கு உகந்த கூறுகளின் ஒரு தட்டு கொண்டிருப்பது பெரிய appsகளில் மிகவும் பயனுள்ளதாக இருக்கின்றது. இதில் நாம் பின்பற்ற வேண்டிய கொள்கையானது, ஒரு பயனர் இடைமுகம் பலமுறை பயன்பட்டாலோ(`Button`, `Panel`, `Avatar`) அல்லது மிகவும் சிக்கலாதாக இருந்தாலோ(`App`, `FeedStory`, `Comment`) அதனை மறுபயன்பாட்டு கூறாக மாற்றுவது சிறந்தது.
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 16158f195a86fc2dbb59b3ea5a5c32ce161dccb9
 
 ## Props ஆனது படிக்க மட்டுமே (Read-Only) {#props-are-read-only}
 
