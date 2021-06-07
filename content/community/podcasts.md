@@ -16,7 +16,9 @@ Reactக்கு அர்ப்பணிக்கப்பட்ட பாட�
 
 - [React 30](https://react30.com/) - React பற்றிய 30 நிமிட போட்காஸ்ட் (நகர்த்தப்பட்டது [The React Podcast](https://reactpodcast.simplecast.fm/)).
 
-- [React Native Radio](https://devchat.tv/react-native-radio)
+- [React Native Radio](https://reactnativeradio.com) - Exploring React Native Together, hosted by [Infinite Red](https://infinite.red)
+
+- [React Wednesdays](https://www.telerik.com/react-wednesdays) - Weekly live streams with the best and brightest in the React world
 
 ## அத்தியாயங்கள் {#episodes}
 
