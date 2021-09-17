@@ -17,9 +17,12 @@ next: concurrent-mode-reference.html
 
 >Caution:
 >
->This page describes **experimental features that are not yet available in a stable release**. Don't rely on experimental builds of React in production apps. These features may change significantly and without a warning before they become a part of React.
+>This page was about experimental features that aren't yet available in a stable release. It was aimed at early adopters and people who are curious.
 >
->This documentation is aimed at early adopters and people who are curious. **If you're new to React, don't worry about these features** -- you don't need to learn them right now.
+>Much of the information on this page is now outdated and exists only for archival purposes. **Please refer to the [React 18 Alpha announcement post](/blog/2021/06/08/the-plan-for-react-18.html
+) for the up-to-date information.**
+>
+>Before React 18 is released, we will replace this page with stable documentation.
 
 </div>
 
@@ -54,7 +57,7 @@ We're using this code in production (and it works for us) but there are still so
 
 ### Enabling Concurrent Mode {#enabling-concurrent-mode}
 
-Normally, when we add features to React, you can start using them immediately. Fragments, Context, and even Hooks are examples of such features. You can use in new code without making any changes to the existing code.
+Normally, when we add features to React, you can start using them immediately. Fragments, Context, and even Hooks are examples of such features. You can use them in new code without making any changes to the existing code.
 
 Concurrent Mode is different. It introduces semantic changes to how React works. Otherwise, the [new features](/docs/concurrent-mode-patterns.html) enabled by it *wouldn't be possible*. This is why they're grouped into a new "mode" rather than released one by one in isolation.
 
@@ -71,7 +74,7 @@ import ReactDOM from 'react-dom';
 //
 // You can opt into Concurrent Mode by writing:
 
-ReactDOM.createRoot(
+ReactDOM.unstable_createRoot(
   document.getElementById('root')
 ).render(<App />);
 ```
