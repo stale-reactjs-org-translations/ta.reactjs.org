@@ -5,4 +5,8 @@ order: 2
 
 React ஆனது வேறு எந்தவிதமான தொழில்நுட்ப அமைப்பிலும் சம்பந்தப்படாது சுயமாக செயல்படக்கூடியது. ஆகவே நீங்கள் புதிய அம்சங்களை React இல் உருவாக்கும் போது தற்போது உங்களிடம் உள்ள செயலியில் ( app ) எந்தவிதமான மாற்றங்களையும் மேற்கொள்ள வேண்டிய தேவை ஏற்ப்படாது.
 
+<<<<<<< HEAD
 React ஐ நீங்கள் Node ஐ பயன்படுத்தி சேவையகத்தில் இருந்தும் காண்பிக்க முடியும். அத்தோடு [React Native](https://facebook.github.io/react-native/)  ஐ பயன்படுத்தி கையடக்க சாதனங்களுக்கான ( mobile ) செயலிகளையும் ( apps ) உருவாக்கி கொள்ளலாம்.
+=======
+React can also render on the server using Node and power mobile apps using [React Native](https://reactnative.dev/).
+>>>>>>> 0cddca13ddebb3ed19c1124723e10d006a5457fc
