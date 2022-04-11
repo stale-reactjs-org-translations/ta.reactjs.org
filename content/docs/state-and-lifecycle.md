@@ -10,9 +10,15 @@ next: handling-events.html
 
 இந்தப் பக்கம் React கூறுகளில் உள்ள நிலை(state) மற்றும் வாழ்க்கை சுழற்சி (lifecycle) குறித்து முன்னுரை அளிக்கிறது. கூறுகளின்  விரிவான API குறிப்பை நீங்கள் [இங்கே காணலாம்](/docs/react-component.html).
 
+<<<<<<< HEAD
 [முந்தைய பிரிவு ஒன்றில்](/docs/rendering-elements.html#updating-the-rendered-element) குறிப்பிடப்பட்டுள்ள சுழலும் கடிகார எடுத்துக்காட்டை எடுத்துக்கொள்க. [வரையும் உறுப்புகளில்](/docs/rendering-elements.html#rendering-an-element-into-the-dom), UI-ல் மாற்றம் செய்யும் ஒரே வழியை அறிந்தோம். வரையப்பட்ட வெளியீட்டை மாற்ற நாம் `ReactDOM.render()`யை அழைக்கிறோம்:
+=======
+Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
-```js{8-11}
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +26,7 @@ function tick() {
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -36,7 +39,9 @@ setInterval(tick, 1000);
 நாம் கடிகாரத்தின் தோற்றத்தை உறைபொதியாக்குதலிருந்து தொடங்கலாம்:
 
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -47,10 +52,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -63,10 +65,7 @@ setInterval(tick, 1000);
 பொதுவாக, இதை ஒரு முறை எழுதிவிட்டு, `Clock`-ஐ தானாகவே புதுப்பிக்க வைப்பதையே நாம் விரும்புவோம்:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 இதனை செயல்படுத்த, நாம் "state(நிலை)"-ஐ `Clock`-இனுல் சேர்க்க வேண்டும்.
@@ -159,10 +158,7 @@ class Clock extends React.Component {
 3) `date` பண்பை `<Clock />`-லிருந்து நீக்கவும்:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 நாம் கடிகை நிரலை கூறினுள்ளேயே பின்பு சேர்க்க உள்ளோம்.
@@ -186,10 +182,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -295,10 +289,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -307,7 +299,11 @@ ReactDOM.render(
 
 இதுவரை நடந்தவைகளையும் செயற்கூறுகள் அழைக்கப்படும் முறையையும் காண்போம்:
 
+<<<<<<< HEAD
 1) `<Clock/>` `ReactDOM.render()`-க்கு கொடுக்க படும் போது, React `Clock` கூறின் ஆக்கி-யை அழைக்கின்றது. `Clock` தற்போதைய நேரத்தை காட்ட வேண்டியதலால், அது `this.state` -ஐ தற்போதைய நேரத்தை கொண்ட பொருளை வைத்து தொடக்கி வைக்கிறது. நம் இந்த நிலையை பின்பு மாற்ற இருக்கிறோம்.
+=======
+1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 2) அடுத்ததாக React `Clock` கூறின் `render()` செயற்கூறை அழைக்கிறது. இதை வைத்துத்தான் React திரையில் என்ன காட்ட வேண்டும் என்பதை அறிந்து கொள்கிறது. பின்பு React `Clock`-இன் வரைதல் வெளிப்பாட்டிற்கு பொருந்துமாறு DOM-ஐ மாற்றி அமைக்கிறது.
 
@@ -419,12 +415,15 @@ this.setState(function(state, props) {
 ஒரு கூறு தனது நிலை-ஐ தனது குழந்தைகளுக்கு அனுப்பலாம்.
 
 ```js
+<<<<<<< HEAD
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
 இது பயனர்-வரையறுத்த கூறுகளுக்கும் பொருந்தும்.
 
 ```js
+=======
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 <FormattedDate date={this.state.date} />
 ```
 
@@ -454,11 +453,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
