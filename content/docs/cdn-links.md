@@ -3,24 +3,28 @@ id: cdn-links
 title: CDN Links
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
-next: hello-world.html
+next: release-channels.html
 ---
 
 CDN வழியாக React மற்றும் ReactDOM கிடைக்கப்பெறும்.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
 
 மேற்கண்ட பதிப்புகள் செயலுருவாக்கத்திற்கானது ( development ), முழுமையுற்ற ( production ) வழங்கிக்கானதல்ல. குறைத்து எளிமையாக்கப்பட்ட முழுமையான பதிப்பு கிடைக்குமிடம்:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 'react' மற்றும் 'react-dom'-ன் குறிப்பிட்ட பதிப்பை பெற, '16'-க்கு பதிலாக பதிப்பு எண்ணை மாற்றிக் கொள்ளவும்.
+=======
+To load a specific version of `react` and `react-dom`, replace `18` with the version number.
+>>>>>>> 9a5bf3e1f1c151720b3ce383fdd9743d4038b71e
 
 ### எதற்காக `crossorigin` பண்பு? {#why-the-crossorigin-attribute}
 
