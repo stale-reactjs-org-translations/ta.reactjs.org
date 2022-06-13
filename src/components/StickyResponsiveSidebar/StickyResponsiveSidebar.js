@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  * @flow
@@ -43,7 +43,8 @@ class StickyResponsiveSidebar extends Component<Props, State> {
   render() {
     const {open} = this.state;
     const smallScreenSidebarStyles = {
-      top: 0,
+      top:
+        'calc(var(--survey-banner-height-small) + var(--social-banner-height-small))',
       left: 0,
       bottom: 0,
       right: 0,
@@ -117,18 +118,21 @@ class StickyResponsiveSidebar extends Component<Props, State> {
               transition: 'transform 0.5s ease',
             }}
             css={{
-              marginTop: 60,
+              marginTop:
+                'calc(60px + var(--survey-banner-height-normal) + var(--social-banner-height-normal))',
 
               [media.size('xsmall')]: {
                 marginTop: 40,
               },
 
               [media.between('small', 'medium')]: {
-                marginTop: 0,
+                marginTop:
+                  'calc(20px + var(--survey-banner-height-normal) + var(--social-banner-height-normal))',
               },
 
               [media.between('medium', 'large')]: {
-                marginTop: 50,
+                marginTop:
+                  'calc(50px + var(--survey-banner-height-normal) + var(--social-banner-height-normal))',
               },
 
               [media.greaterThan('small')]: {
