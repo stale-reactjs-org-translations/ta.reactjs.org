@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 மேலே கூறிய இரு கூறுகளும்  Reactயின் பார்வையில் சமமானவையே.
 
+<<<<<<< HEAD
 வகுப்புகள்[Classes] சில கூடுதல் அம்சங்களைக் கொண்டிருக்கின்றன, அவை [அடுத்த பிரிவுகளில்](/docs/state-and-lifecycle.html) விவாதிக்கப்படும். அதுவரை, நாம் சுருக்கமான தகவல்களை கொண்ட செயல்பாட்டு கூறுகளை பயன்படுத்துவோம்.
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 
 ## கூறு வரைதல் {#rendering-a-component}
 
@@ -60,30 +64,47 @@ const element = <div />;
 const element = <Welcome name="சாரா" />;
 ```
 
+<<<<<<< HEAD
 React இந்த வகை பயனர் வரையறுக்கப்பட்ட கூறு குறிக்கும் உறுப்பை பார்க்கும் பொழுது, அந்த கூறுக்கு JSX பண்புகளை ஒற்றை பொருளாக கொடுக்கின்றது. நாம் இந்த பண்புகளை "props" என்று அழைக்கின்றோம்.
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 
 உதாரணமாக, இந்த குறியீடு "வணக்கம், சாரா" என்று பக்கத்தில் வரையும்:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>வணக்கம், {props.name}</h1>;
 }
 
+<<<<<<< HEAD
 const element = <Welcome name="சாரா" />;
 ReactDOM.render(
   element,
   document.getElementById('root')
 );
+=======
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <Welcome name="Sara" />;
+root.render(element);
+>>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 இந்த எடுத்துக்காட்டில் என்ன நடக்கிறது என்பதை மீண்டும் பார்க்கலாம்:
 
+<<<<<<< HEAD
 1. நாம் `ReactDOM.render()`ஐ `<Welcome name="Sara" />` உறுப்பு பயன்படுத்தி அழைக்கிறோம்.
 2. React `Welcome` கூறை `{name: 'Sara'}` பண்புகளை கொண்டு அழைக்கும்.
 3. நம்முடைய `Welcome` கூறானது தற்போது `<h1>Hello, Sara</h1>` உறுப்பை முடிவாக திருப்பி கொடுக்கின்றது.
 4. React DOM திறமையாக DOMஐ மேம்படுத்தி `<h1>Hello, Sara</h1>`ஐ பொருத்துக்கின்றது.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 
 >**குறிப்பு:** எப்பொழுதும் கூறு பெயர்களைத் capital எழுத்துக்கள் கொண்டு தொடங்குங்கள்.
 >
@@ -111,14 +132,9 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 பொதுவாக, புது React app ஆனது ஒரு `App` கூறை உச்சத்தில் கொண்டிருக்கும். ஒரு வேலை நீங்கள் இருக்கும் appயில் Reactஐ ஒருங்கிணைத்தால், நீங்கள் சிறிய கூறாகிய `Button` மூலம் தொடங்கி படிபடியாக மேல் நோக்கி செல்லலாம்.
 
@@ -152,7 +168,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 இது `author` (ஒரு object), `text` (ஒரு string), மற்றும் `date` (ஒரு date) ஆகியவற்றை பண்புகளாக எற்றுக்கொண்டு, ஒரு சமூக ஊடக வலைத்தளத்தின் கருத்துரை விவரிக்கிறது.
 
@@ -231,9 +247,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
+<<<<<<< HEAD
 கூறுகளை பிரித்தல் முதலில் கடினமான வேலை போல தோன்றலாம், ஆனால் மறுபயன்பாட்டுக்கு உகந்த கூறுகளின் ஒரு தட்டு கொண்டிருப்பது பெரிய appsகளில் மிகவும் பயனுள்ளதாக இருக்கின்றது. இதில் நாம் பின்பற்ற வேண்டிய கொள்கையானது, ஒரு பயனர் இடைமுகம் பலமுறை பயன்பட்டாலோ(`Button`, `Panel`, `Avatar`) அல்லது மிகவும் சிக்கலாதாக இருந்தாலோ(`App`, `FeedStory`, `Comment`) அதனை மறுபயன்பாட்டு கூறாக மாற்றுவது சிறந்தது.
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> f67fa22cc1faee261f9e22449d90323e26174e8e
 
 ## Props ஆனது படிக்க மட்டுமே (Read-Only) {#props-are-read-only}
 
