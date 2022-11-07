@@ -97,7 +97,7 @@ class Modal extends React.Component {
   render() {
     return ReactDOM.createPortal(
       this.props.children,
-      this.el,
+      this.el
     );
   }
 }
@@ -146,7 +146,8 @@ function Child() {
   );
 }
 
-ReactDOM.render(<Parent />, appRoot);
+const root = ReactDOM.createRoot(appRoot);
+root.render(<Parent />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBWpE)
