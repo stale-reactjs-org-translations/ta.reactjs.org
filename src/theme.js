@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @providesModule theme
  * @flow
@@ -18,7 +18,7 @@ const colors = {
   brand: '#61dafb', // electric blue
   brandLight: '#bbeffd',
   text: '#1a1a1a', // very dark grey / black substitute
-  subtle: '#6d6d6d', // light grey for text
+  subtle: '#6B6B6B', // light grey for text
   subtleOnDark: '#999',
   divider: '#ececec', // very light grey
   note: '#ffe564', // yellow
@@ -55,9 +55,7 @@ const media = {
       if (SIZES[largeKey].max === Infinity) {
         return `@media (min-width: ${SIZES[smallKey].min}px)`;
       } else {
-        return `@media (min-width: ${SIZES[smallKey].min}px) and (max-width: ${
-          SIZES[largeKey].max
-        }px)`;
+        return `@media (min-width: ${SIZES[smallKey].min}px) and (max-width: ${SIZES[largeKey].max}px)`;
       }
     }
   },
@@ -170,17 +168,43 @@ const sharedStyles = {
         zIndex: 2,
       },
     },
-
+    feedbackButton: {
+      border: 0,
+      background: 'none',
+      cursor: 'pointer',
+      ':focus': {
+        color: colors.text,
+        borderColor: colors.text,
+        '& svg': {
+          fill: colors.text,
+        },
+      },
+      ':hover': {
+        color: colors.text,
+        borderColor: colors.text,
+        '& svg': {
+          fill: colors.text,
+        },
+      },
+      '& svg': {
+        height: '1.5em',
+        width: '1.5em',
+        fill: colors.subtle,
+        transition: 'fill 0.2s ease',
+      },
+    },
     editLink: {
-      color: colors.subtle,
+      color: colors.lighter,
       borderColor: colors.divider,
-      transition: 'all 0.2s ease',
-      transitionPropery: 'color, border-color',
+      transition: 'color 0.2s ease, border-color 0.2s ease',
       whiteSpace: 'nowrap',
       borderBottomWidth: 1,
       borderBottomStyle: 'solid',
-
       ':hover': {
+        color: colors.text,
+        borderColor: colors.text,
+      },
+      ':focus': {
         color: colors.text,
         borderColor: colors.text,
       },
