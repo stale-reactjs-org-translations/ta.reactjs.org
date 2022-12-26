@@ -1,10 +1,12 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  * @flow
  */
 
+import SurveyBanner from 'components/SurveyBanner';
+import SocialBanner from 'components/SocialBanner';
 import Container from 'components/Container';
 import HeaderLink from './HeaderLink';
 import {Link} from 'gatsby';
@@ -18,6 +20,15 @@ import DocSearch from './DocSearch';
 import navHeader from '../../../content/headerNav.yml';
 
 import logoSvg from 'icons/logo.svg';
+
+const ContainerWrapper = ({children}) => (
+  <div
+    css={{
+      backgroundColor: 'hsl(222, 14%, 10%)',
+    }}>
+    {children}
+  </div>
+);
 
 const Header = ({location}: {location: Location}) => (
   <header
@@ -33,18 +44,26 @@ const Header = ({location}: {location: Location}) => (
         display: 'none',
       },
     }}>
+    <ContainerWrapper>
+      <Container>
+        <div style={{position: 'relative'}}>
+          <SurveyBanner />
+          <SocialBanner />
+        </div>
+      </Container>
+    </ContainerWrapper>
     <Container>
       <div
         css={{
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          height: 60,
-          [media.between('small', 'large')]: {
-            height: 50,
+          height: 'var(--header-height-large)',
+          [media.size('medium')]: {
+            height: 'var(--header-height-normal)',
           },
           [media.lessThan('small')]: {
-            height: 40,
+            height: 'var(--header-height-small)',
           },
         }}>
         <Link
