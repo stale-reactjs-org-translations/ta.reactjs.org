@@ -8,7 +8,20 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React கூறுகளுடன் நிகழ்வுகளைக் கையாளுதல் DOM கூறுகளுடன் நிகழ்வுகளைக் கையாளுவதற்கு மிகவும் ஒத்திருக்கிறது. சில தொடரியல் வேறுபாடுகள் உள்ளன:
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Responding to Events](https://beta.reactjs.org/learn/responding-to-events)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 * சிறிய எழுத்துக்களைக் காட்டிலும், ஒட்டக வடிவ எழுத்துக்களைக் பயன்படுத்தி React நிகழ்வுகள் பெயரிடப்பட்டுள்ளன.
 * JSX உடன் நீங்கள் ஒரு செயக்கூற்றை விட, செயற்பாடு கையாளுபவராக ஒரு செயல்பாட்டை அனுப்புகிறீர்கள், சொல்லுக்கு மாறாக.
@@ -29,32 +42,40 @@ React-ல் சற்று வித்தியாசமானது:
 </button>
 ```
 
+<<<<<<< HEAD
 மற்றொரு வித்தியாசம் என்னவென்றால், React-ல் இயல்புநிலை நடத்தையைத் தடுக்க நீங்கள் `false`யை தர முடியாது. நீங்கள் `preventDefault`  வெளிப்படையாக அழைக்க வேண்டும். உதாரணத்திற்கு, தெளிவாக HTML உடன், புதிய பக்கத்தைத் திறக்கும் இயல்புநிலை இணைப்பு நடத்தையை தடுக்க, நீங்கள் எழுதலாம்:
+=======
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
-</a>
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
 ```
 
 React-ல் இதற்கு பதிலாக:
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('You clicked submit.');
   }
 
   return (
-    <a href="#" onClick={handleClick}>
-      Click me
-    </a>
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 ```
 
+<<<<<<< HEAD
 இங்கே, `e` ஒரு செயற்கை நிகழ்வு. React இந்த செயற்கை நிகழ்வுகளை [W3C விவரம் ](https://www.w3.org/TR/DOM-Level-3-Events/) விவரக்குறிப்பின் படி வரையறுக்கிறது, எனவே குறுக்கு-உலாவி பொருந்தக்கூடிய தன்மையைப் பற்றி நீங்கள் கவலைப்பட தேவையில்லை. மேலும் அறிய, [`செயற்கைநிகழ்வு`](/docs/events.html) குறிப்பு வழிகாட்டியைப் பார்க்கவும்.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 React-ஐ பயன்படுத்தும் போது, ​​பொதுவாக ஒரு DOM கூறு உருவாக்கப்பட்ட பிறகு கவனிப்பவர்களைச் சேர்க்க `addEventListener`-ஐ அழைக்க தேவையில்லை. அதற்கு பதிலாக, கூறு ஆரம்பத்தில் காண்பிக்கப்படும் போது கவனிப்பவருக்கு வழங்கவும்.
 
@@ -71,8 +92,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
@@ -84,11 +105,6 @@ class Toggle extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen-ல் முயற்சி செய்க**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -97,15 +113,18 @@ JSX கால்பேக்குகளில் இதன் பொருள�
 
 இது React சார்ந்த நடத்தை அல்ல; இது [JavaScript-ல் செயல்பாடுகள் எவ்வாறு செயல்படுகின்றன.](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/) என்பதின் ஒரு பகுதியாகும். பொதுவாக, `()` இல்லாமல் ஒரு முறையை நீங்கள் குறிப்பிட்டால், `onClick={this.handleClick}` போன்று, நீங்கள் அந்த முறையை பிணைக்க வேண்டும்.
 
+<<<<<<< HEAD
 `bind`-பை அழைப்பது எரிச்சலூட்டினால், இதைச் சுற்றி உங்களுக்கு இரண்டு வழிகள் உள்ளன. நீங்கள் சோதனையைப் பயன்படுத்துகிறீர்கள் என்றால் [பொது வகுப்பு புலங்கள் தொடரியல்](https://babeljs.io/docs/plugins/transform-class-properties/), கால்பேக்குகளை சரியாக பிணைக்க நீங்கள் வகுப்பு புலங்களைப் பயன்படுத்தலாம்:
+=======
+If calling `bind` annoys you, there are two ways you can get around this. You can use [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) to correctly bind callbacks:
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 ```js{2-6}
 class LoggingButton extends React.Component {
   // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
   handleClick = () => {
     console.log('this is:', this);
-  }
+  };
 
   render() {
     return (
@@ -130,7 +149,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
