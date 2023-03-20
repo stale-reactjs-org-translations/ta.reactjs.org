@@ -51,7 +51,7 @@
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.0",
     "react-live": "1.8.0-0",
-    "remarkable": "^1.7.1",
+    "remarkable": "^1.7.2",
     "request-promise": "^4.2.2",
     "rimraf": "^2.6.1",
     "slugify": "^1.2.1",
